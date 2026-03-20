@@ -49,3 +49,14 @@
 PyPI returns naive datetimes. GitHub returns ISO with `Z` suffix. `datetime.now(timezone.utc)` is aware.
 Comparing naive vs aware raises TypeError. Fix: always normalize to UTC-aware at parse time.
 Affects: PyPI client `upload_time` parsing AND the sort fallback (`datetime.min` is naive).
+
+### GitHub Rate Limits (hit: 2026-03-20)
+Unauthenticated: 60 req/hr. Authenticated (GITHUB_TOKEN): 5000 req/hr.
+4 analyzers × 4 packages = ~40 API calls. Hits the wall on the 4th package unauthenticated.
+Current behavior: analyzer catches RateLimitError, logs warning, returns no signals.
+Need: prompt user to set GITHUB_TOKEN, or batch/parallelize within limit.
+
+### Process Discipline (hit: 2026-03-20)
+Satish caught me pushing to GitHub without updating Craft.md first.
+My own contract says "update before and after every work block."
+Rule: Always update Craft.md BEFORE committing/pushing. No exceptions.

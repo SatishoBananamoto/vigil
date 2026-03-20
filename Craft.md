@@ -30,12 +30,18 @@
 - [x] JSON output mode
 - [x] 25 tests passing
 
-**Phase 1: More Analyzers** (next)
-- [ ] Community health metrics (contributor diversity, issue velocity, PR merge time)
-- [ ] Security posture analyzer (CI/CD presence, branch protection signals)
-- [ ] Sustainability indicators (funding, org backing, license stability)
+**Phase 1: More Analyzers** (COMPLETE)
+- [x] Community health analyzer (issue responsiveness, close rate, contributor breadth, community size)
+- [x] Security posture analyzer (security policy, license, dev status, yanked releases, fork detection)
+- [x] Sustainability analyzer (org backing, project maturity, funding signals, maintenance load)
+- [x] 46 tests passing
+- [x] Repo live: https://github.com/SatishoBananamoto/vigil
+
+**Phase 1.5: Hardening** (next)
+- [ ] GitHub rate limit handling (authenticate, backoff, warn user)
 - [ ] Commit trend with linear regression (not just quarter-over-quarter)
-- [ ] Issue response time analyzer
+- [ ] Issue response time refinement (use comments API, not just updated_at proxy)
+- [ ] Graceful degradation when signals fail (partial results, not crash)
 
 **Phase 2: Dependency Graph**
 - [x] Parse requirements.txt / pyproject.toml
@@ -51,10 +57,12 @@
 - [ ] Migration difficulty assessment
 
 **Phase 4: Output & Integration**
-- [ ] CLI interface (vigil scan requirements.txt)
-- [ ] Risk scorecard output (terminal, JSON, markdown)
+- [x] CLI interface (vigil scan, vigil check)
+- [x] Risk scorecard output (terminal table + detailed signal view)
+- [x] JSON output mode (--json flag)
 - [ ] CI integration mode (exit codes, thresholds)
 - [ ] Caching layer (don't re-fetch unchanged data)
+- [ ] Markdown output mode
 
 ---
 
@@ -65,6 +73,7 @@
 | D-001 | 2026-03-20 | Python, CLI-first, no web UI | Chromebook constraints. Fastest to ship. Can add UI later. |
 | D-002 | 2026-03-20 | Start with PyPI ecosystem only | Satish's primary language. Simpler to model one ecosystem deeply first. |
 | D-003 | 2026-03-20 | Focus on sustainability prediction, not CVE scanning | Crowded at CVE layer (Snyk $300M+ ARR, Socket $65M, Endor $188M). Empty at sustainability prediction layer. |
+| D-004 | 2026-03-20 | Graceful degradation on API failures | Hit rate limit during scan — security/sustainability analyzers failed for httpx but rest of scan completed. This is correct behavior. |
 
 ---
 
@@ -91,15 +100,18 @@
 
 ## Session Log
 
-### 2026-03-20 — Session 1: Inception + Phase 0
+### 2026-03-20 — Session 1: Inception through Phase 1
 - Proposed vigil concept to Satish — accepted
 - Completed web research: supply chain landscape 2025-2026
-- Key findings: space crowded at CVE layer, empty at sustainability prediction
 - Created operational docs (Craft.md, Skills.md, Intel.md)
-- Built entire Phase 0: models, parsers, GitHub client, PyPI client, analyzer framework
-- Built first analyzer (MaintainerAnalyzer): push recency, commit trend, bus factor, release cadence
+- Built Phase 0: models, parsers, GitHub client, PyPI client, analyzer framework
+- Built Phase 1: all 4 analyzers (maintainer, community, security, sustainability)
+  - 15+ signals per package across 4 risk dimensions
 - Wired CLI end-to-end: `vigil scan` and `vigil check` commands
 - Rich terminal output with summary table + detailed signal view + JSON mode
 - Fixed timezone bug (PyPI returns naive datetimes, GitHub returns aware)
-- 25 tests passing, 4 real packages scanned successfully
-- **Next**: More analyzers (community health, security posture), GitHub repo creation
+- 46 tests passing, 4 real packages scanned successfully
+- Repo created and pushed: https://github.com/SatishoBananamoto/vigil
+- Hit GitHub rate limit (unauthenticated = 60 req/hr) — degraded gracefully
+- Satish caught me not updating Craft.md before committing. Lesson learned.
+- **Next**: Rate limit handling, signal refinement, hardening
