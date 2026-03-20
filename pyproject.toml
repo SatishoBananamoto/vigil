@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vigil"
+version = "0.1.0"
+description = "Predictive risk intelligence for open source dependencies"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Satish Patil" },
+]
+dependencies = [
+    "httpx>=0.27",
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "respx>=0.21",
+]
+
+[project.scripts]
+vigil = "vigil.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vigil"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
