@@ -25,6 +25,7 @@ class SignalCategory(Enum):
     SECURITY = "security"
     SUSTAINABILITY = "sustainability"
     REGULATORY = "regulatory"
+    CASCADE = "cascade"
 
 
 @dataclass
@@ -62,6 +63,32 @@ class Dependency:
 
 
 @dataclass
+class DependencyNode:
+    """A node in the transitive dependency tree."""
+
+    package: str
+    version: str | None = None
+    depth: int = 0
+    children: list[DependencyNode] = field(default_factory=list)
+    risk_score: float | None = None  # PyPI-only quick risk estimate
+
+    @property
+    def total_nodes(self) -> int:
+        """Total nodes in this subtree (including self)."""
+        return 1 + sum(c.total_nodes for c in self.children)
+
+    def flatten(self) -> list[DependencyNode]:
+        """All nodes in the tree as a flat list (BFS order)."""
+        result = []
+        queue = [self]
+        while queue:
+            node = queue.pop(0)
+            result.append(node)
+            queue.extend(node.children)
+        return result
+
+
+@dataclass
 class HealthProfile:
     """Multi-dimensional health assessment for a single dependency."""
 
@@ -71,6 +98,7 @@ class HealthProfile:
     signals: list[Signal] = field(default_factory=list)
     assessed_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     error: str | None = None  # if assessment failed
+    dependency_tree: DependencyNode | None = None
 
     @property
     def risk_score(self) -> float:

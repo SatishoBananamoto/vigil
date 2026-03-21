@@ -7,7 +7,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from vigil.models import HealthProfile, RiskLevel, ScanResult, SignalCategory
+from vigil.models import DependencyNode, HealthProfile, RiskLevel, ScanResult, SignalCategory
 
 RISK_COLORS = {
     RiskLevel.LOW: "green",
@@ -120,6 +120,12 @@ def render_detail(profile: HealthProfile, console: Console | None = None) -> Non
             console.print(f"    {bar} {s.name}: {s.detail} {conf}")
         console.print()
 
+    # Dependency tree (if cascade analysis was run)
+    if profile.dependency_tree and profile.dependency_tree.children:
+        console.print("  [bold]dependency tree[/]")
+        _render_tree(profile.dependency_tree, console, prefix="    ")
+        console.print()
+
 
 def _health_bar(value: float, width: int = 10) -> str:
     """Visual health bar."""
@@ -131,3 +137,38 @@ def _health_bar(value: float, width: int = 10) -> str:
     else:
         color = "red"
     return f"[{color}]{'█' * filled}{'░' * (width - filled)}[/]"
+
+
+def _render_tree(
+    node: DependencyNode,
+    console: Console,
+    prefix: str = "",
+    is_last: bool = True,
+    is_root: bool = True,
+) -> None:
+    """Render a dependency tree with box-drawing characters."""
+    if is_root:
+        # Root node — just show name
+        console.print(f"{prefix}[cyan]{node.package}[/]")
+        child_prefix = prefix
+    else:
+        connector = "└── " if is_last else "├── "
+        risk_label = ""
+        if node.risk_score is not None:
+            if node.risk_score > 0.6:
+                risk_label = f" [bold red](risk: {node.risk_score:.2f})[/]"
+            elif node.risk_score > 0.4:
+                risk_label = f" [yellow](risk: {node.risk_score:.2f})[/]"
+            else:
+                risk_label = f" [dim](risk: {node.risk_score:.2f})[/]"
+        console.print(f"{prefix}{connector}{node.package}{risk_label}")
+        child_prefix = prefix + ("    " if is_last else "│   ")
+
+    for i, child in enumerate(node.children):
+        _render_tree(
+            child,
+            console,
+            prefix=child_prefix,
+            is_last=(i == len(node.children) - 1),
+            is_root=False,
+        )

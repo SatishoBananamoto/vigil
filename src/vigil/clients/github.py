@@ -2,12 +2,16 @@
 
 from __future__ import annotations
 
-import os
 import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 
 import httpx
+
+from vigil.config import resolve_github_token
+
+# Approximate GitHub API calls per package scan
+CALLS_PER_PACKAGE = 7
 
 
 @dataclass
@@ -60,7 +64,7 @@ class GitHubClient:
     BASE_URL = "https://api.github.com"
 
     def __init__(self, token: str | None = None, timeout: float = 15.0):
-        self._token = token or os.environ.get("GITHUB_TOKEN")
+        self._token = resolve_github_token(token)
         headers = {"Accept": "application/vnd.github+json"}
         if self._token:
             headers["Authorization"] = f"Bearer {self._token}"
@@ -71,10 +75,30 @@ class GitHubClient:
         )
         self._cache: dict[str, tuple[float, object]] = {}
         self._cache_ttl = 3600  # 1 hour
+        # Budget tracking from response headers
+        self._remaining: int | None = None
+        self._limit: int | None = None
+        self._reset_at: int | None = None
+        self._requests_made: int = 0
 
     @property
     def authenticated(self) -> bool:
         return self._token is not None
+
+    @property
+    def remaining(self) -> int | None:
+        """Remaining API requests (from last response header)."""
+        return self._remaining
+
+    @property
+    def limit(self) -> int | None:
+        """Total API request limit (from last response header)."""
+        return self._limit
+
+    @property
+    def requests_made(self) -> int:
+        """Number of actual (non-cached) API calls made this session."""
+        return self._requests_made
 
     def _get(self, path: str, params: dict | None = None) -> dict | list | None:
         """Make a GET request with rate-limit handling and caching."""
@@ -85,12 +109,16 @@ class GitHubClient:
                 return data
 
         resp = self._client.get(path, params=params)
+        self._requests_made += 1
+
+        # Track budget from every response
+        self._remaining = int(resp.headers.get("x-ratelimit-remaining", self._remaining or 999))
+        self._limit = int(resp.headers.get("x-ratelimit-limit", self._limit or 0))
+        self._reset_at = int(resp.headers.get("x-ratelimit-reset", self._reset_at or 0))
 
         # Check rate limit
-        remaining = int(resp.headers.get("x-ratelimit-remaining", 999))
-        if resp.status_code == 403 and remaining == 0:
-            reset_at = int(resp.headers.get("x-ratelimit-reset", 0))
-            raise RateLimitError(reset_at)
+        if resp.status_code == 403 and self._remaining == 0:
+            raise RateLimitError(self._reset_at)
 
         if resp.status_code == 404:
             return None
@@ -104,15 +132,29 @@ class GitHubClient:
         return data
 
     def rate_limit_status(self) -> dict:
-        """Check current rate limit status."""
+        """Check current rate limit status (makes one API call)."""
         resp = self._client.get("/rate_limit")
         resp.raise_for_status()
         core = resp.json().get("resources", {}).get("core", {})
+        self._remaining = core.get("remaining", 0)
+        self._limit = core.get("limit", 0)
+        self._reset_at = core.get("reset", 0)
         return {
-            "remaining": core.get("remaining", 0),
-            "limit": core.get("limit", 0),
-            "reset_at": core.get("reset", 0),
+            "remaining": self._remaining,
+            "limit": self._limit,
+            "reset_at": self._reset_at,
         }
+
+    def can_scan(self, package_count: int) -> tuple[bool, int]:
+        """Check if we have enough budget to scan N packages.
+
+        Returns (can_proceed, estimated_calls_needed).
+        """
+        estimated = package_count * CALLS_PER_PACKAGE
+        if self._remaining is None:
+            # Haven't checked yet — optimistic
+            return True, estimated
+        return self._remaining >= estimated, estimated
 
     def get_repo(self, owner: str, name: str) -> GitHubRepoInfo | None:
         """Fetch repository metadata."""
