@@ -59,7 +59,7 @@ EXPECTED_RISKY = [
 
 EXPECTED_MODERATE = [
     ("setuptools", RiskLevel.MODERATE, "Had maintenance scare 2025, recovered"),
-    ("colorama", RiskLevel.CRITICAL, "No PyPI release in 3+ years, no repo link — effectively abandoned"),
+    ("colorama", RiskLevel.MODERATE, "No release in 3+ years but repo exists with contributor base — stale not dead"),
     ("deep-translator", RiskLevel.MODERATE, "Was hijacked, legitimate version restored"),
     ("ultralytics", RiskLevel.LOW, "CI/CD compromised Dec 2024, but very active project"),
     ("pillow", RiskLevel.MODERATE, "Active but unrecognized license (HPND) + slow issue response"),
