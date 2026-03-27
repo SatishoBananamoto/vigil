@@ -1,0 +1,88 @@
+name: 'Vigil Dependency Risk Scan'
+description: 'Scan your dependencies for health and security risks using vigil-risk'
+branding:
+  icon: 'shield'
+  color: 'orange'
+
+inputs:
+  file:
+    description: 'Path to dependency file (pyproject.toml, requirements.txt, etc.)'
+    required: false
+    default: 'pyproject.toml'
+  github-token:
+    description: 'GitHub token for API access (increases rate limit from 60 to 5000/hr)'
+    required: false
+    default: ${{ github.token }}
+  fail-on:
+    description: 'Fail the check if any package has this risk level or above (critical, high, moderate, low, none)'
+    required: false
+    default: 'critical'
+  cascade:
+    description: 'Include transitive dependency analysis'
+    required: false
+    default: 'false'
+
+outputs:
+  report:
+    description: 'Path to the generated markdown report'
+    value: ${{ steps.scan.outputs.report }}
+  worst-risk:
+    description: 'Worst risk level found (critical, high, moderate, low)'
+    value: ${{ steps.scan.outputs.worst-risk }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install vigil
+      shell: bash
+      run: pip install vigil-risk
+
+    - name: Run scan
+      id: scan
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+      run: |
+        REPORT_PATH="vigil-report.md"
+        vigil report "${{ inputs.file }}" \
+          --name "${{ github.repository }}" \
+          ${{ inputs.cascade == 'true' && '--cascade' || '' }} \
+          -o "$REPORT_PATH"
+
+        echo "report=$REPORT_PATH" >> $GITHUB_OUTPUT
+
+        # Determine worst risk
+        if grep -q "| CRITICAL |" "$REPORT_PATH"; then
+          echo "worst-risk=critical" >> $GITHUB_OUTPUT
+        elif grep -q "| HIGH |" "$REPORT_PATH"; then
+          echo "worst-risk=high" >> $GITHUB_OUTPUT
+        elif grep -q "| MODERATE |" "$REPORT_PATH"; then
+          echo "worst-risk=moderate" >> $GITHUB_OUTPUT
+        else
+          echo "worst-risk=low" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Check threshold
+      shell: bash
+      run: |
+        WORST="${{ steps.scan.outputs.worst-risk }}"
+        FAIL_ON="${{ inputs.fail-on }}"
+
+        declare -A LEVELS=([low]=1 [moderate]=2 [high]=3 [critical]=4 [none]=0)
+
+        if [ "${LEVELS[$WORST]:-0}" -ge "${LEVELS[$FAIL_ON]:-4}" ]; then
+          echo "::error::Vigil found $WORST risk dependencies (threshold: $FAIL_ON)"
+          cat "${{ steps.scan.outputs.report }}"
+          exit 1
+        fi
+
+    - name: Post report as comment
+      if: github.event_name == 'pull_request'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+      run: |
+        if [ -f "${{ steps.scan.outputs.report }}" ]; then
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --body "$(cat ${{ steps.scan.outputs.report }})"
+        fi
