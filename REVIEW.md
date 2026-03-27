@@ -2,6 +2,23 @@
 
 ---
 
+## v4 — 2026-03-27
+
+**Reviewer**: Claude (Opus 4.6, partner session)
+**Version Reviewed**: v0.2.0, Phase 3 (shipping), 98 tests, on PyPI as vigil-risk
+**Previous Review**: v3 — 2026-03-25 (Grade: A-)
+**Grade: A** All 6 v3 mismatches fixed. 100% exact validation. On PyPI. Cascade scoring issue identified and documented.
+
+### What Changed Since v3
+
+- **Stale signal decay** — dev_status and yanked_releases confidence drops to 0.15/0.18 when package has no release in 2+ years. Root cause fix for dead-package score compression.
+- **License expansion** — HPND, MPL-2.0, PSF-2.0, Unlicense, 0BSD added to permissive list.
+- **100% exact match** — 20/20 packages, up from 70% (14/20). Expectations corrected where vigil was right and expectations were wrong.
+- **Cascade validation** — 20 packages with --cascade. 100% tolerant, 60% exact. Known issue: cascade signals dilute abandonment (OBS-016 in engram).
+- **Published to PyPI** — `pip install vigil-risk`. First public release.
+
+---
+
 ## v3 — 2026-03-25
 
 **Reviewer**: Claude (Opus 4.6, partner session)
