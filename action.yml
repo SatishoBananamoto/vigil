@@ -68,9 +68,22 @@ runs:
         WORST="${{ steps.scan.outputs.worst-risk }}"
         FAIL_ON="${{ inputs.fail-on }}"
 
-        declare -A LEVELS=([low]=1 [moderate]=2 [high]=3 [critical]=4 [none]=0)
+        # Skip threshold check if fail-on is none
+        if [ "$FAIL_ON" = "none" ]; then
+          echo "Monitoring mode — no threshold check."
+          exit 0
+        fi
 
-        if [ "${LEVELS[$WORST]:-0}" -ge "${LEVELS[$FAIL_ON]:-4}" ]; then
+        level_num() {
+          case "$1" in
+            low) echo 1 ;; moderate) echo 2 ;; high) echo 3 ;; critical) echo 4 ;; *) echo 0 ;;
+          esac
+        }
+
+        WORST_N=$(level_num "$WORST")
+        FAIL_N=$(level_num "$FAIL_ON")
+
+        if [ "$WORST_N" -ge "$FAIL_N" ]; then
           echo "::error::Vigil found $WORST risk dependencies (threshold: $FAIL_ON)"
           cat "${{ steps.scan.outputs.report }}"
           exit 1
