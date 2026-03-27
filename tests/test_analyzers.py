@@ -69,6 +69,27 @@ class TestMaintainerAnalyzer:
         assert len(archived_signals) == 1
         assert archived_signals[0].value == 0.0
 
+    def test_archived_repo_with_recent_releases(self):
+        """Archived repo + recent releases = reduced penalty."""
+        repo = _repo(archived=True)
+        pypi = _pypi(days_since_latest=30, release_count=5)
+        signals = self.analyzer.analyze("test", None, pypi_info=pypi, repo_info=repo)
+        archived_signals = [s for s in signals if s.name == "repo_archived"]
+        assert len(archived_signals) == 1
+        assert archived_signals[0].value == 0.3  # reduced from 0.0
+        assert archived_signals[0].confidence == 0.5  # reduced from 1.0
+        assert "recent releases" in archived_signals[0].detail
+
+    def test_archived_repo_no_recent_releases(self):
+        """Archived repo + stale releases = full penalty."""
+        repo = _repo(archived=True)
+        pypi = _pypi(days_since_latest=500, release_count=5)
+        signals = self.analyzer.analyze("test", None, pypi_info=pypi, repo_info=repo)
+        archived_signals = [s for s in signals if s.name == "repo_archived"]
+        assert len(archived_signals) == 1
+        assert archived_signals[0].value == 0.0
+        assert archived_signals[0].confidence == 1.0
+
     def test_push_recency_active(self):
         signal = self.analyzer._push_recency(_repo(pushed_days_ago=2))
         assert signal.value >= 0.9
