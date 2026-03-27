@@ -43,13 +43,30 @@ class MaintainerAnalyzer(Analyzer):
                 signals.append(self._bus_factor(contributors))
 
         elif repo_info and repo_info.archived:
-            signals.append(Signal(
-                name="repo_archived",
-                category=SignalCategory.MAINTAINER,
-                value=0.0,
-                confidence=1.0,
-                detail=f"Repository {repo_info.full_name} is archived — no longer maintained.",
-            ))
+            # Check if package still has recent releases despite archived repo
+            # (some projects archive GitHub but continue releasing via CI)
+            recently_released = False
+            if pypi_info and pypi_info.releases:
+                from vigil.analyzers.security import _days_since_last_release
+                days = _days_since_last_release(pypi_info)
+                recently_released = days is not None and days < 180
+
+            if recently_released:
+                signals.append(Signal(
+                    name="repo_archived",
+                    category=SignalCategory.MAINTAINER,
+                    value=0.3,
+                    confidence=0.5,
+                    detail=f"Repository {repo_info.full_name} is archived, but package has recent releases.",
+                ))
+            else:
+                signals.append(Signal(
+                    name="repo_archived",
+                    category=SignalCategory.MAINTAINER,
+                    value=0.0,
+                    confidence=1.0,
+                    detail=f"Repository {repo_info.full_name} is archived — no longer maintained.",
+                ))
 
         # Release cadence from PyPI
         if pypi_info and pypi_info.releases:
