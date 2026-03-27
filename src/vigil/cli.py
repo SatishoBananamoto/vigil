@@ -105,7 +105,8 @@ def scan(file: str, detail: bool, as_json: bool, cascade: bool):
     "--cascade", "-c", is_flag=True,
     help="Analyze transitive dependency risk.",
 )
-def check(package: str, cascade: bool):
+@click.option("--json", "as_json", is_flag=True, help="Output as JSON.")
+def check(package: str, cascade: bool, as_json: bool):
     """Check a single package's health."""
     console.print(f"[dim]Checking {package}...[/]")
 
@@ -131,7 +132,30 @@ def check(package: str, cascade: bool):
         if resolver:
             console.print(f"[dim]Resolved {resolver.packages_fetched} transitive packages from PyPI.[/]")
 
-    render_detail(profile, console)
+    if as_json:
+        import json as json_mod
+        click.echo(json_mod.dumps(_profile_to_dict(profile), indent=2))
+    else:
+        render_detail(profile, console)
+
+
+def _profile_to_dict(profile) -> dict:
+    """Convert a HealthProfile to a JSON-serializable dict."""
+    return {
+        "package": profile.package,
+        "risk_score": round(profile.risk_score, 4),
+        "risk_level": profile.risk_level.value,
+        "signals": [
+            {
+                "name": s.name,
+                "category": s.category.value,
+                "value": round(s.value, 4),
+                "confidence": round(s.confidence, 2),
+                "detail": s.detail,
+            }
+            for s in profile.signals
+        ],
+    }
 
 
 @main.command()
