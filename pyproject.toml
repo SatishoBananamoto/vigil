@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "vigil"
+name = "vigil-risk"
 version = "0.2.0"
 description = "Predictive risk intelligence for open source dependencies"
 requires-python = ">=3.10"
