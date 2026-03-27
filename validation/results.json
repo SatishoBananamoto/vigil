@@ -2,8 +2,8 @@
   {
     "package": "requests",
     "expected_level": "low",
-    "actual_level": "low",
-    "actual_score": 0.2119,
+    "actual_level": "moderate",
+    "actual_score": 0.265,
     "match": true,
     "reason": "Most popular HTTP library, well-maintained",
     "error": null,
@@ -14,13 +14,6 @@
         "value": 1.0,
         "confidence": 0.8,
         "detail": "Active \u2014 last push 1d ago."
-      },
-      {
-        "name": "commit_trend",
-        "category": "maintainer",
-        "value": 0.9,
-        "confidence": 0.7,
-        "detail": "Growing \u2014 commits up 3200% quarter-over-quarter."
       },
       {
         "name": "bus_factor",
@@ -119,6 +112,27 @@
         "value": 0.9,
         "confidence": 0.4,
         "detail": "Low issue load \u2014 285 open issues for 53,878 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: idna (direct dep, risk 0.13)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "4 transitive deps \u2014 small surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
@@ -126,7 +140,7 @@
     "package": "flask",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.1879,
+    "actual_score": 0.2353,
     "match": true,
     "reason": "Major web framework, Pallets team",
     "error": null,
@@ -242,6 +256,27 @@
         "value": 0.9,
         "confidence": 0.4,
         "detail": "Low issue load \u2014 3 open issues for 71,383 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: blinker (direct dep, risk 0.37)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "11 transitive deps \u2014 moderate surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
@@ -249,7 +284,7 @@
     "package": "django",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.156,
+    "actual_score": 0.2102,
     "match": true,
     "reason": "Largest Python web framework, strong community",
     "error": null,
@@ -365,14 +400,35 @@
         "value": 0.9,
         "confidence": 0.4,
         "detail": "Low issue load \u2014 422 open issues for 87,130 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: tzdata (direct dep, risk 0.23)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "4 transitive deps \u2014 small surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
   {
     "package": "pytest",
     "expected_level": "low",
-    "actual_level": "low",
-    "actual_score": 0.2474,
+    "actual_level": "moderate",
+    "actual_score": 0.2851,
     "match": true,
     "reason": "Standard test framework, very active",
     "error": null,
@@ -488,6 +544,27 @@
         "value": 0.5,
         "confidence": 0.4,
         "detail": "Heavy issue load \u2014 1012 open issues for 13,722 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: colorama (direct dep, risk 0.33)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "8 transitive deps \u2014 moderate surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
@@ -495,7 +572,7 @@
     "package": "click",
     "expected_level": "moderate",
     "actual_level": "moderate",
-    "actual_score": 0.2947,
+    "actual_score": 0.3259,
     "match": true,
     "reason": "CLI framework, Pallets team \u2014 slow issue response, declining commits",
     "error": null,
@@ -611,14 +688,35 @@
         "value": 0.9,
         "confidence": 0.4,
         "detail": "Low issue load \u2014 161 open issues for 17,366 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: colorama (direct dep, risk 0.33)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "1 transitive deps \u2014 small surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
   {
     "package": "httpx",
     "expected_level": "low",
-    "actual_level": "low",
-    "actual_score": 0.2202,
+    "actual_level": "moderate",
+    "actual_score": 0.2673,
     "match": true,
     "reason": "Modern HTTP client, actively maintained",
     "error": null,
@@ -727,14 +825,35 @@
         "value": 0.9,
         "confidence": 0.4,
         "detail": "Low issue load \u2014 149 open issues for 15,156 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: httpcore (direct dep, risk 0.23)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "10 transitive deps \u2014 moderate surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
   {
     "package": "rich",
     "expected_level": "low",
-    "actual_level": "low",
-    "actual_score": 0.2333,
+    "actual_level": "moderate",
+    "actual_score": 0.3526,
     "match": true,
     "reason": "Terminal rendering, Will McGugan, very active",
     "error": null,
@@ -766,6 +885,27 @@
         "value": 0.5,
         "confidence": 0.4,
         "detail": "No source repository linked, but has recent releases."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: mdurl (depth 2, risk 0.53)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "3 transitive deps \u2014 small surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "1 fragile transitive dep(s): mdurl."
       }
     ]
   },
@@ -773,7 +913,7 @@
     "package": "fastapi",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.175,
+    "actual_score": 0.2297,
     "match": true,
     "reason": "Modern web framework, rapid growth",
     "error": null,
@@ -881,7 +1021,28 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 165 open issues for 96,612 stars."
+        "detail": "Low issue load \u2014 166 open issues for 96,612 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: annotated-types (depth 2, risk 0.37)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "19 transitive deps \u2014 large surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
@@ -889,7 +1050,7 @@
     "package": "pydantic",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.1894,
+    "actual_score": 0.2388,
     "match": true,
     "reason": "Data validation, core to FastAPI ecosystem",
     "error": null,
@@ -998,6 +1159,27 @@
         "value": 0.7,
         "confidence": 0.4,
         "detail": "Moderate issue load \u2014 544 open issues for 27,325 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: annotated-types (direct dep, risk 0.37)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "7 transitive deps \u2014 moderate surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
@@ -1005,7 +1187,7 @@
     "package": "numpy",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.2333,
+    "actual_score": 0.2077,
     "match": true,
     "reason": "Scientific computing foundation, NumFOCUS backed",
     "error": null,
@@ -1037,14 +1219,21 @@
         "value": 0.5,
         "confidence": 0.4,
         "detail": "No source repository linked, but has recent releases."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   },
   {
     "package": "pycrypto",
     "expected_level": "critical",
-    "actual_level": "critical",
-    "actual_score": 0.7646,
+    "actual_level": "high",
+    "actual_score": 0.6512,
     "match": true,
     "reason": "Abandoned since 2014, known CVEs, 1.5M downloads/month",
     "error": null,
@@ -1083,14 +1272,21 @@
         "value": 0.1,
         "confidence": 0.8,
         "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   },
   {
     "package": "nose",
     "expected_level": "critical",
-    "actual_level": "critical",
-    "actual_score": 0.7646,
+    "actual_level": "high",
+    "actual_score": 0.6512,
     "match": true,
     "reason": "Abandoned since 2015, broken on Python 3.12",
     "error": null,
@@ -1129,14 +1325,21 @@
         "value": 0.1,
         "confidence": 0.8,
         "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   },
   {
     "package": "distribute",
     "expected_level": "critical",
-    "actual_level": "critical",
-    "actual_score": 0.7646,
+    "actual_level": "high",
+    "actual_score": 0.6512,
     "match": true,
     "reason": "Superseded by setuptools, abandoned since 2013",
     "error": null,
@@ -1175,14 +1378,21 @@
         "value": 0.1,
         "confidence": 0.8,
         "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   },
   {
     "package": "mimeparse",
     "expected_level": "critical",
-    "actual_level": "critical",
-    "actual_score": 0.7835,
+    "actual_level": "high",
+    "actual_score": 0.6688,
     "match": true,
     "reason": "Unmaintained, last release 2014",
     "error": null,
@@ -1221,14 +1431,21 @@
         "value": 0.1,
         "confidence": 0.8,
         "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   },
   {
     "package": "pep8",
     "expected_level": "critical",
-    "actual_level": "critical",
-    "actual_score": 0.7646,
+    "actual_level": "high",
+    "actual_score": 0.6512,
     "match": true,
     "reason": "Renamed to pycodestyle, original abandoned since 2016",
     "error": null,
@@ -1267,6 +1484,13 @@
         "value": 0.1,
         "confidence": 0.8,
         "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   },
@@ -1274,7 +1498,7 @@
     "package": "setuptools",
     "expected_level": "moderate",
     "actual_level": "moderate",
-    "actual_score": 0.2722,
+    "actual_score": 0.2637,
     "match": true,
     "reason": "Had maintenance scare 2025, recovered",
     "error": null,
@@ -1390,14 +1614,21 @@
         "value": 0.3,
         "confidence": 0.4,
         "detail": "Overwhelming issue load \u2014 634 open issues for 2,815 stars."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   },
   {
     "package": "colorama",
     "expected_level": "critical",
-    "actual_level": "critical",
-    "actual_score": 0.7794,
+    "actual_level": "high",
+    "actual_score": 0.6635,
     "match": true,
     "reason": "No PyPI release in 3+ years, no repo link \u2014 effectively abandoned",
     "error": null,
@@ -1436,6 +1667,13 @@
         "value": 0.1,
         "confidence": 0.8,
         "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   },
@@ -1443,7 +1681,7 @@
     "package": "deep-translator",
     "expected_level": "moderate",
     "actual_level": "moderate",
-    "actual_score": 0.4092,
+    "actual_score": 0.4561,
     "match": true,
     "reason": "Was hijacked, legitimate version restored",
     "error": null,
@@ -1454,6 +1692,13 @@
         "value": 0.1,
         "confidence": 0.8,
         "detail": "Inactive \u2014 last push 611d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.1,
+        "confidence": 0.7,
+        "detail": "No commits in last 6 months."
       },
       {
         "name": "bus_factor",
@@ -1552,14 +1797,35 @@
         "value": 0.7,
         "confidence": 0.4,
         "detail": "Moderate issue load \u2014 64 open issues for 1,973 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: typing-extensions (depth 2, risk 0.23)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "8 transitive deps \u2014 moderate surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
   {
     "package": "ultralytics",
     "expected_level": "low",
-    "actual_level": "low",
-    "actual_score": 0.2037,
+    "actual_level": "moderate",
+    "actual_score": 0.2621,
     "match": true,
     "reason": "CI/CD compromised Dec 2024, but very active project",
     "error": null,
@@ -1618,7 +1884,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 55,042 stars."
+        "detail": "High visibility \u2014 55,043 stars."
       },
       {
         "name": "security_policy",
@@ -1674,7 +1940,28 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 312 open issues for 55,042 stars."
+        "detail": "Low issue load \u2014 312 open issues for 55,043 stars."
+      },
+      {
+        "name": "cascade_worst",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "Worst transitive: cycler (depth 2, risk 0.37)."
+      },
+      {
+        "name": "cascade_breadth",
+        "category": "cascade",
+        "value": 0.2,
+        "confidence": 0.5,
+        "detail": "96 transitive deps \u2014 massive surface area."
+      },
+      {
+        "name": "cascade_fragile",
+        "category": "cascade",
+        "value": 0.5,
+        "confidence": 0.6,
+        "detail": "No fragile transitive dependencies."
       }
     ]
   },
@@ -1682,7 +1969,7 @@
     "package": "pillow",
     "expected_level": "moderate",
     "actual_level": "moderate",
-    "actual_score": 0.2789,
+    "actual_score": 0.2701,
     "match": true,
     "reason": "Active but unrecognized license (HPND) + slow issue response",
     "error": null,
@@ -1798,6 +2085,13 @@
         "value": 0.9,
         "confidence": 0.4,
         "detail": "Low issue load \u2014 134 open issues for 13,472 stars."
+      },
+      {
+        "name": "cascade_risk",
+        "category": "cascade",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "No transitive dependencies detected."
       }
     ]
   }
