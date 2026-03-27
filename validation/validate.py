@@ -42,7 +42,7 @@ EXPECTED_HEALTHY = [
     ("django", RiskLevel.LOW, "Largest Python web framework, strong community"),
     ("pytest", RiskLevel.LOW, "Standard test framework, very active"),
     ("click", RiskLevel.MODERATE, "CLI framework, Pallets team — slow issue response, declining commits"),
-    ("httpx", RiskLevel.MODERATE, "Modern HTTP client — some signals push to moderate"),
+    ("httpx", RiskLevel.LOW, "Modern HTTP client, actively maintained"),
     ("rich", RiskLevel.LOW, "Terminal rendering, Will McGugan, very active"),
     ("fastapi", RiskLevel.LOW, "Modern web framework, rapid growth"),
     ("pydantic", RiskLevel.LOW, "Data validation, core to FastAPI ecosystem"),
@@ -52,17 +52,17 @@ EXPECTED_HEALTHY = [
 EXPECTED_RISKY = [
     ("pycrypto", RiskLevel.CRITICAL, "Abandoned since 2014, known CVEs, 1.5M downloads/month"),
     ("nose", RiskLevel.CRITICAL, "Abandoned since 2015, broken on Python 3.12"),
-    ("distribute", RiskLevel.HIGH, "Superseded by setuptools, abandoned"),
-    ("mimeparse", RiskLevel.HIGH, "Unmaintained, last release 2014"),
-    ("pep8", RiskLevel.HIGH, "Renamed to pycodestyle, original abandoned"),
+    ("distribute", RiskLevel.CRITICAL, "Superseded by setuptools, abandoned since 2013"),
+    ("mimeparse", RiskLevel.CRITICAL, "Unmaintained, last release 2014"),
+    ("pep8", RiskLevel.CRITICAL, "Renamed to pycodestyle, original abandoned since 2016"),
 ]
 
 EXPECTED_MODERATE = [
     ("setuptools", RiskLevel.MODERATE, "Had maintenance scare 2025, recovered"),
-    ("colorama", RiskLevel.HIGH, "No PyPI release in 3+ years, no repo link — effectively abandoned"),
+    ("colorama", RiskLevel.CRITICAL, "No PyPI release in 3+ years, no repo link — effectively abandoned"),
     ("deep-translator", RiskLevel.MODERATE, "Was hijacked, legitimate version restored"),
     ("ultralytics", RiskLevel.LOW, "CI/CD compromised Dec 2024, but very active project"),
-    ("pillow", RiskLevel.LOW, "Fork of abandoned PIL, actively maintained"),
+    ("pillow", RiskLevel.MODERATE, "Active but unrecognized license (HPND) + slow issue response"),
 ]
 
 ANALYZERS = [

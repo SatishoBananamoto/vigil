@@ -3,7 +3,7 @@
     "package": "requests",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.2098,
+    "actual_score": 0.2119,
     "match": true,
     "reason": "Most popular HTTP library, well-maintained",
     "error": null,
@@ -20,7 +20,7 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.7,
-        "detail": "Growing \u2014 commits up 2600% quarter-over-quarter."
+        "detail": "Growing \u2014 commits up 3200% quarter-over-quarter."
       },
       {
         "name": "bus_factor",
@@ -32,23 +32,23 @@
       {
         "name": "release_cadence",
         "category": "maintainer",
-        "value": 0.4,
+        "value": 0.7,
         "confidence": 0.6,
-        "detail": "Slow releases \u2014 latest 214d ago."
+        "detail": "Moderate release pace \u2014 latest 1d ago."
       },
       {
         "name": "issue_responsiveness",
         "category": "community",
-        "value": 0.35,
+        "value": 0.15,
         "confidence": 0.5,
-        "detail": "Slow \u2014 median first activity within 369h."
+        "detail": "Very slow \u2014 median first activity within 5242h."
       },
       {
         "name": "issue_close_rate",
         "category": "community",
-        "value": 0.9,
+        "value": 0.7,
         "confidence": 0.5,
-        "detail": "High close rate \u2014 82% of recent issues resolved."
+        "detail": "Moderate close rate \u2014 71% of recent issues resolved."
       },
       {
         "name": "contributor_breadth",
@@ -62,7 +62,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 53,876 stars."
+        "detail": "High visibility \u2014 53,878 stars."
       },
       {
         "name": "security_policy",
@@ -90,7 +90,7 @@
         "category": "security",
         "value": 0.7,
         "confidence": 0.6,
-        "detail": "Mostly clean \u2014 2/157 releases yanked."
+        "detail": "Mostly clean \u2014 2/158 releases yanked."
       },
       {
         "name": "org_backing",
@@ -118,7 +118,7 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 299 open issues for 53,876 stars."
+        "detail": "Low issue load \u2014 285 open issues for 53,878 stars."
       }
     ]
   },
@@ -126,7 +126,7 @@
     "package": "flask",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.1963,
+    "actual_score": 0.1879,
     "match": true,
     "reason": "Major web framework, Pallets team",
     "error": null,
@@ -134,16 +134,16 @@
       {
         "name": "push_recency",
         "category": "maintainer",
-        "value": 0.9,
+        "value": 1.0,
         "confidence": 0.8,
-        "detail": "Recent activity \u2014 last push 12d ago."
+        "detail": "Active \u2014 last push 2d ago."
       },
       {
         "name": "commit_trend",
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.7,
-        "detail": "Growing \u2014 commits up 343% quarter-over-quarter."
+        "detail": "Growing \u2014 commits up 357% quarter-over-quarter."
       },
       {
         "name": "bus_factor",
@@ -157,7 +157,7 @@
         "category": "maintainer",
         "value": 0.7,
         "confidence": 0.6,
-        "detail": "Moderate release pace \u2014 latest 30d ago."
+        "detail": "Moderate release pace \u2014 latest 35d ago."
       },
       {
         "name": "issue_responsiveness",
@@ -185,7 +185,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 71,373 stars."
+        "detail": "High visibility \u2014 71,383 stars."
       },
       {
         "name": "security_policy",
@@ -241,7 +241,7 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 3 open issues for 71,373 stars."
+        "detail": "Low issue load \u2014 3 open issues for 71,383 stars."
       }
     ]
   },
@@ -266,7 +266,7 @@
         "category": "maintainer",
         "value": 0.7,
         "confidence": 0.7,
-        "detail": "Stable \u2014 commits at 85% of previous quarter."
+        "detail": "Stable \u2014 commits at 83% of previous quarter."
       },
       {
         "name": "bus_factor",
@@ -280,7 +280,7 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Active releases \u2014 latest 17d ago, 0d between last two."
+        "detail": "Active releases \u2014 latest 23d ago, 0d between last two."
       },
       {
         "name": "issue_responsiveness",
@@ -308,7 +308,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 87,104 stars."
+        "detail": "High visibility \u2014 87,130 stars."
       },
       {
         "name": "security_policy",
@@ -364,7 +364,7 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 429 open issues for 87,104 stars."
+        "detail": "Low issue load \u2014 422 open issues for 87,130 stars."
       }
     ]
   },
@@ -389,7 +389,7 @@
         "category": "maintainer",
         "value": 0.4,
         "confidence": 0.7,
-        "detail": "Declining \u2014 commits at 46% of previous quarter."
+        "detail": "Declining \u2014 commits at 48% of previous quarter."
       },
       {
         "name": "bus_factor",
@@ -403,21 +403,21 @@
         "category": "maintainer",
         "value": 0.7,
         "confidence": 0.6,
-        "detail": "Moderate release pace \u2014 latest 104d ago."
+        "detail": "Moderate release pace \u2014 latest 110d ago."
       },
       {
         "name": "issue_responsiveness",
         "category": "community",
         "value": 0.15,
         "confidence": 0.5,
-        "detail": "Very slow \u2014 median first activity within 1554h."
+        "detail": "Very slow \u2014 median first activity within 1766h."
       },
       {
         "name": "issue_close_rate",
         "category": "community",
         "value": 0.5,
         "confidence": 0.5,
-        "detail": "Low close rate \u2014 44% of recent issues resolved."
+        "detail": "Low close rate \u2014 55% of recent issues resolved."
       },
       {
         "name": "contributor_breadth",
@@ -431,7 +431,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 13,721 stars."
+        "detail": "High visibility \u2014 13,722 stars."
       },
       {
         "name": "security_policy",
@@ -487,32 +487,32 @@
         "category": "sustainability",
         "value": 0.5,
         "confidence": 0.4,
-        "detail": "Heavy issue load \u2014 1012 open issues for 13,721 stars."
+        "detail": "Heavy issue load \u2014 1012 open issues for 13,722 stars."
       }
     ]
   },
   {
     "package": "click",
-    "expected_level": "low",
+    "expected_level": "moderate",
     "actual_level": "moderate",
-    "actual_score": 0.2705,
+    "actual_score": 0.2947,
     "match": true,
-    "reason": "CLI framework, Pallets team",
+    "reason": "CLI framework, Pallets team \u2014 slow issue response, declining commits",
     "error": null,
     "signals": [
       {
         "name": "push_recency",
         "category": "maintainer",
-        "value": 1.0,
+        "value": 0.9,
         "confidence": 0.8,
-        "detail": "Active \u2014 last push 5d ago."
+        "detail": "Recent activity \u2014 last push 11d ago."
       },
       {
         "name": "commit_trend",
         "category": "maintainer",
         "value": 0.15,
         "confidence": 0.7,
-        "detail": "Dropping fast \u2014 commits at 2% of previous quarter."
+        "detail": "Dropping fast \u2014 commits at 3% of previous quarter."
       },
       {
         "name": "bus_factor",
@@ -526,21 +526,21 @@
         "category": "maintainer",
         "value": 0.7,
         "confidence": 0.6,
-        "detail": "Moderate release pace \u2014 latest 125d ago."
+        "detail": "Moderate release pace \u2014 latest 131d ago."
       },
       {
         "name": "issue_responsiveness",
         "category": "community",
         "value": 0.15,
         "confidence": 0.5,
-        "detail": "Very slow \u2014 median first activity within 3490h."
+        "detail": "Very slow \u2014 median first activity within 6269h."
       },
       {
         "name": "issue_close_rate",
         "category": "community",
-        "value": 0.5,
+        "value": 0.2,
         "confidence": 0.5,
-        "detail": "Low close rate \u2014 40% of recent issues resolved."
+        "detail": "Very low close rate \u2014 25% of recent issues resolved."
       },
       {
         "name": "contributor_breadth",
@@ -554,7 +554,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 17,358 stars."
+        "detail": "High visibility \u2014 17,366 stars."
       },
       {
         "name": "security_policy",
@@ -610,15 +610,15 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 161 open issues for 17,358 stars."
+        "detail": "Low issue load \u2014 161 open issues for 17,366 stars."
       }
     ]
   },
   {
     "package": "httpx",
     "expected_level": "low",
-    "actual_level": "moderate",
-    "actual_score": 0.2687,
+    "actual_level": "low",
+    "actual_score": 0.2202,
     "match": true,
     "reason": "Modern HTTP client, actively maintained",
     "error": null,
@@ -628,14 +628,7 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.8,
-        "detail": "Recent activity \u2014 last push 19d ago."
-      },
-      {
-        "name": "commit_trend",
-        "category": "maintainer",
-        "value": 0.15,
-        "confidence": 0.7,
-        "detail": "Dropping fast \u2014 commits at 25% of previous quarter."
+        "detail": "Recent activity \u2014 last push 25d ago."
       },
       {
         "name": "bus_factor",
@@ -649,7 +642,7 @@
         "category": "maintainer",
         "value": 0.4,
         "confidence": 0.6,
-        "detail": "Slow releases \u2014 latest 186d ago."
+        "detail": "Slow releases \u2014 latest 192d ago."
       },
       {
         "name": "issue_responsiveness",
@@ -677,7 +670,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 15,153 stars."
+        "detail": "High visibility \u2014 15,156 stars."
       },
       {
         "name": "security_policy",
@@ -733,7 +726,7 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 149 open issues for 15,153 stars."
+        "detail": "Low issue load \u2014 149 open issues for 15,156 stars."
       }
     ]
   },
@@ -751,7 +744,7 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Active releases \u2014 latest 29d ago, 18d between last two."
+        "detail": "Active releases \u2014 latest 35d ago, 18d between last two."
       },
       {
         "name": "dev_status",
@@ -780,7 +773,7 @@
     "package": "fastapi",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.1692,
+    "actual_score": 0.175,
     "match": true,
     "reason": "Modern web framework, rapid growth",
     "error": null,
@@ -791,13 +784,6 @@
         "value": 1.0,
         "confidence": 0.8,
         "detail": "Active \u2014 last push 0d ago."
-      },
-      {
-        "name": "commit_trend",
-        "category": "maintainer",
-        "value": 0.9,
-        "confidence": 0.7,
-        "detail": "Growing \u2014 commits up 135% quarter-over-quarter."
       },
       {
         "name": "bus_factor",
@@ -811,7 +797,7 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Active releases \u2014 latest 19d ago, 0d between last two."
+        "detail": "Active releases \u2014 latest 3d ago, 21d between last two."
       },
       {
         "name": "issue_responsiveness",
@@ -839,7 +825,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 96,405 stars."
+        "detail": "High visibility \u2014 96,612 stars."
       },
       {
         "name": "security_policy",
@@ -867,7 +853,7 @@
         "category": "security",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Clean release history \u2014 0/286 releases yanked."
+        "detail": "Clean release history \u2014 0/287 releases yanked."
       },
       {
         "name": "org_backing",
@@ -895,7 +881,7 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 165 open issues for 96,405 stars."
+        "detail": "Low issue load \u2014 165 open issues for 96,612 stars."
       }
     ]
   },
@@ -903,7 +889,7 @@
     "package": "pydantic",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.2165,
+    "actual_score": 0.1894,
     "match": true,
     "reason": "Data validation, core to FastAPI ecosystem",
     "error": null,
@@ -913,14 +899,7 @@
         "category": "maintainer",
         "value": 1.0,
         "confidence": 0.8,
-        "detail": "Active \u2014 last push 2d ago."
-      },
-      {
-        "name": "commit_trend",
-        "category": "maintainer",
-        "value": 0.4,
-        "confidence": 0.7,
-        "detail": "Declining \u2014 commits at 47% of previous quarter."
+        "detail": "Active \u2014 last push 0d ago."
       },
       {
         "name": "bus_factor",
@@ -934,21 +913,21 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Active releases \u2014 latest 24d ago, 0d between last two."
+        "detail": "Active releases \u2014 latest 30d ago, 0d between last two."
       },
       {
         "name": "issue_responsiveness",
         "category": "community",
-        "value": 0.35,
+        "value": 0.6,
         "confidence": 0.5,
-        "detail": "Slow \u2014 median first activity within 488h."
+        "detail": "Moderate \u2014 median first activity within 161h."
       },
       {
         "name": "issue_close_rate",
         "category": "community",
-        "value": 0.5,
+        "value": 0.2,
         "confidence": 0.5,
-        "detail": "Low close rate \u2014 48% of recent issues resolved."
+        "detail": "Very low close rate \u2014 38% of recent issues resolved."
       },
       {
         "name": "contributor_breadth",
@@ -962,7 +941,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 27,275 stars."
+        "detail": "High visibility \u2014 27,325 stars."
       },
       {
         "name": "security_policy",
@@ -1018,7 +997,7 @@
         "category": "sustainability",
         "value": 0.7,
         "confidence": 0.4,
-        "detail": "Moderate issue load \u2014 541 open issues for 27,275 stars."
+        "detail": "Moderate issue load \u2014 544 open issues for 27,325 stars."
       }
     ]
   },
@@ -1036,7 +1015,7 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Active releases \u2014 latest 11d ago, 36d between last two."
+        "detail": "Active releases \u2014 latest 17d ago, 36d between last two."
       },
       {
         "name": "dev_status",
@@ -1064,8 +1043,8 @@
   {
     "package": "pycrypto",
     "expected_level": "critical",
-    "actual_level": "high",
-    "actual_score": 0.6047,
+    "actual_level": "critical",
+    "actual_score": 0.7646,
     "match": true,
     "reason": "Abandoned since 2014, known CVEs, 1.5M downloads/month",
     "error": null,
@@ -1075,21 +1054,21 @@
         "category": "maintainer",
         "value": 0.15,
         "confidence": 0.6,
-        "detail": "Stale \u2014 last release 4291d ago."
+        "detail": "Stale \u2014 last release 4297d ago."
       },
       {
         "name": "dev_status",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.5,
-        "detail": "Declared stable: 5 - Production/Stable."
+        "confidence": 0.15,
+        "detail": "Declared stable: 5 - Production/Stable. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "yanked_releases",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.6,
-        "detail": "Clean release history \u2014 0/13 releases yanked."
+        "confidence": 0.18,
+        "detail": "Clean release history \u2014 0/13 releases yanked. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "no_source_repo",
@@ -1110,8 +1089,8 @@
   {
     "package": "nose",
     "expected_level": "critical",
-    "actual_level": "high",
-    "actual_score": 0.6047,
+    "actual_level": "critical",
+    "actual_score": 0.7646,
     "match": true,
     "reason": "Abandoned since 2015, broken on Python 3.12",
     "error": null,
@@ -1121,21 +1100,21 @@
         "category": "maintainer",
         "value": 0.15,
         "confidence": 0.6,
-        "detail": "Stale \u2014 last release 3944d ago."
+        "detail": "Stale \u2014 last release 3950d ago."
       },
       {
         "name": "dev_status",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.5,
-        "detail": "Declared stable: 5 - Production/Stable."
+        "confidence": 0.15,
+        "detail": "Declared stable: 5 - Production/Stable. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "yanked_releases",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.6,
-        "detail": "Clean release history \u2014 0/14 releases yanked."
+        "confidence": 0.18,
+        "detail": "Clean release history \u2014 0/14 releases yanked. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "no_source_repo",
@@ -1155,11 +1134,11 @@
   },
   {
     "package": "distribute",
-    "expected_level": "high",
-    "actual_level": "high",
-    "actual_score": 0.6047,
+    "expected_level": "critical",
+    "actual_level": "critical",
+    "actual_score": 0.7646,
     "match": true,
-    "reason": "Superseded by setuptools, abandoned",
+    "reason": "Superseded by setuptools, abandoned since 2013",
     "error": null,
     "signals": [
       {
@@ -1167,21 +1146,21 @@
         "category": "maintainer",
         "value": 0.15,
         "confidence": 0.6,
-        "detail": "Stale \u2014 last release 4641d ago."
+        "detail": "Stale \u2014 last release 4647d ago."
       },
       {
         "name": "dev_status",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.5,
-        "detail": "Declared stable: 5 - Production/Stable."
+        "confidence": 0.15,
+        "detail": "Declared stable: 5 - Production/Stable. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "yanked_releases",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.6,
-        "detail": "Clean release history \u2014 0/49 releases yanked."
+        "confidence": 0.18,
+        "detail": "Clean release history \u2014 0/49 releases yanked. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "no_source_repo",
@@ -1201,9 +1180,9 @@
   },
   {
     "package": "mimeparse",
-    "expected_level": "high",
-    "actual_level": "high",
-    "actual_score": 0.6845,
+    "expected_level": "critical",
+    "actual_level": "critical",
+    "actual_score": 0.7835,
     "match": true,
     "reason": "Unmaintained, last release 2014",
     "error": null,
@@ -1213,7 +1192,7 @@
         "category": "maintainer",
         "value": 0.15,
         "confidence": 0.6,
-        "detail": "Stale \u2014 last release 5659d ago."
+        "detail": "Stale \u2014 last release 5665d ago."
       },
       {
         "name": "dev_status",
@@ -1226,8 +1205,8 @@
         "name": "yanked_releases",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.6,
-        "detail": "Clean release history \u2014 0/3 releases yanked."
+        "confidence": 0.18,
+        "detail": "Clean release history \u2014 0/3 releases yanked. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "no_source_repo",
@@ -1247,11 +1226,11 @@
   },
   {
     "package": "pep8",
-    "expected_level": "high",
-    "actual_level": "high",
-    "actual_score": 0.6047,
+    "expected_level": "critical",
+    "actual_level": "critical",
+    "actual_score": 0.7646,
     "match": true,
-    "reason": "Renamed to pycodestyle, original abandoned",
+    "reason": "Renamed to pycodestyle, original abandoned since 2016",
     "error": null,
     "signals": [
       {
@@ -1259,21 +1238,21 @@
         "category": "maintainer",
         "value": 0.15,
         "confidence": 0.6,
-        "detail": "Stale \u2014 last release 3069d ago."
+        "detail": "Stale \u2014 last release 3075d ago."
       },
       {
         "name": "dev_status",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.5,
-        "detail": "Declared stable: 5 - Production/Stable."
+        "confidence": 0.15,
+        "detail": "Declared stable: 5 - Production/Stable. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "yanked_releases",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.6,
-        "detail": "Clean release history \u2014 0/37 releases yanked."
+        "confidence": 0.18,
+        "detail": "Clean release history \u2014 0/37 releases yanked. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "no_source_repo",
@@ -1305,7 +1284,7 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.8,
-        "detail": "Recent activity \u2014 last push 11d ago."
+        "detail": "Recent activity \u2014 last push 17d ago."
       },
       {
         "name": "commit_trend",
@@ -1326,21 +1305,21 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Active releases \u2014 latest 11d ago, 28d between last two."
+        "detail": "Active releases \u2014 latest 17d ago, 28d between last two."
       },
       {
         "name": "issue_responsiveness",
         "category": "community",
         "value": 0.15,
         "confidence": 0.5,
-        "detail": "Very slow \u2014 median first activity within 5805h."
+        "detail": "Very slow \u2014 median first activity within 7363h."
       },
       {
         "name": "issue_close_rate",
         "category": "community",
         "value": 0.2,
         "confidence": 0.5,
-        "detail": "Very low close rate \u2014 18% of recent issues resolved."
+        "detail": "Very low close rate \u2014 14% of recent issues resolved."
       },
       {
         "name": "contributor_breadth",
@@ -1410,17 +1389,17 @@
         "category": "sustainability",
         "value": 0.3,
         "confidence": 0.4,
-        "detail": "Overwhelming issue load \u2014 637 open issues for 2,815 stars."
+        "detail": "Overwhelming issue load \u2014 634 open issues for 2,815 stars."
       }
     ]
   },
   {
     "package": "colorama",
-    "expected_level": "moderate",
-    "actual_level": "high",
-    "actual_score": 0.6422,
+    "expected_level": "critical",
+    "actual_level": "critical",
+    "actual_score": 0.7794,
     "match": true,
-    "reason": "No PyPI release in 3+ years, 133 open issues, no repo link in metadata",
+    "reason": "No PyPI release in 3+ years, no repo link \u2014 effectively abandoned",
     "error": null,
     "signals": [
       {
@@ -1428,21 +1407,21 @@
         "category": "maintainer",
         "value": 0.15,
         "confidence": 0.6,
-        "detail": "Stale \u2014 last release 1243d ago."
+        "detail": "Stale \u2014 last release 1248d ago."
       },
       {
         "name": "dev_status",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.5,
-        "detail": "Declared stable: 5 - Production/Stable."
+        "confidence": 0.15,
+        "detail": "Declared stable: 5 - Production/Stable. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "yanked_releases",
         "category": "security",
         "value": 0.7,
-        "confidence": 0.6,
-        "detail": "Mostly clean \u2014 1/46 releases yanked."
+        "confidence": 0.18,
+        "detail": "Mostly clean \u2014 1/46 releases yanked. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "no_source_repo",
@@ -1464,7 +1443,7 @@
     "package": "deep-translator",
     "expected_level": "moderate",
     "actual_level": "moderate",
-    "actual_score": 0.3828,
+    "actual_score": 0.4092,
     "match": true,
     "reason": "Was hijacked, legitimate version restored",
     "error": null,
@@ -1474,7 +1453,7 @@
         "category": "maintainer",
         "value": 0.1,
         "confidence": 0.8,
-        "detail": "Inactive \u2014 last push 605d ago."
+        "detail": "Inactive \u2014 last push 611d ago."
       },
       {
         "name": "bus_factor",
@@ -1488,7 +1467,7 @@
         "category": "maintainer",
         "value": 0.15,
         "confidence": 0.6,
-        "detail": "Stale \u2014 last release 996d ago."
+        "detail": "Stale \u2014 last release 1002d ago."
       },
       {
         "name": "issue_responsiveness",
@@ -1536,15 +1515,15 @@
         "name": "dev_status",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.5,
-        "detail": "Declared stable: 5 - Production/Stable."
+        "confidence": 0.15,
+        "detail": "Declared stable: 5 - Production/Stable. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "yanked_releases",
         "category": "security",
         "value": 0.9,
-        "confidence": 0.6,
-        "detail": "Clean release history \u2014 0/72 releases yanked."
+        "confidence": 0.18,
+        "detail": "Clean release history \u2014 0/72 releases yanked. (stale \u2014 no release in 2+ years)"
       },
       {
         "name": "org_backing",
@@ -1580,7 +1559,7 @@
     "package": "ultralytics",
     "expected_level": "low",
     "actual_level": "low",
-    "actual_score": 0.2379,
+    "actual_score": 0.2037,
     "match": true,
     "reason": "CI/CD compromised Dec 2024, but very active project",
     "error": null,
@@ -1597,7 +1576,7 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.7,
-        "detail": "Growing \u2014 commits up 123% quarter-over-quarter."
+        "detail": "Growing \u2014 commits up 126% quarter-over-quarter."
       },
       {
         "name": "bus_factor",
@@ -1611,21 +1590,21 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Active releases \u2014 latest 1d ago, 2d between last two."
+        "detail": "Active releases \u2014 latest 0d ago, 0d between last two."
       },
       {
         "name": "issue_responsiveness",
         "category": "community",
-        "value": 0.15,
+        "value": 0.8,
         "confidence": 0.5,
-        "detail": "Very slow \u2014 median first activity within 757h."
+        "detail": "Good \u2014 median first activity within 62h."
       },
       {
         "name": "issue_close_rate",
         "category": "community",
         "value": 0.5,
         "confidence": 0.5,
-        "detail": "Low close rate \u2014 40% of recent issues resolved."
+        "detail": "Low close rate \u2014 44% of recent issues resolved."
       },
       {
         "name": "contributor_breadth",
@@ -1639,7 +1618,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 54,741 stars."
+        "detail": "High visibility \u2014 55,042 stars."
       },
       {
         "name": "security_policy",
@@ -1667,7 +1646,7 @@
         "category": "security",
         "value": 0.7,
         "confidence": 0.6,
-        "detail": "Mostly clean \u2014 9/699 releases yanked."
+        "detail": "Mostly clean \u2014 9/705 releases yanked."
       },
       {
         "name": "org_backing",
@@ -1695,17 +1674,17 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 301 open issues for 54,741 stars."
+        "detail": "Low issue load \u2014 312 open issues for 55,042 stars."
       }
     ]
   },
   {
     "package": "pillow",
-    "expected_level": "low",
+    "expected_level": "moderate",
     "actual_level": "moderate",
-    "actual_score": 0.2634,
+    "actual_score": 0.2789,
     "match": true,
-    "reason": "Fork of abandoned PIL, actively maintained",
+    "reason": "Active but unrecognized license (HPND) + slow issue response",
     "error": null,
     "signals": [
       {
@@ -1720,7 +1699,7 @@
         "category": "maintainer",
         "value": 0.7,
         "confidence": 0.7,
-        "detail": "Stable \u2014 commits at 97% of previous quarter."
+        "detail": "Stable \u2014 commits at 108% of previous quarter."
       },
       {
         "name": "bus_factor",
@@ -1734,21 +1713,21 @@
         "category": "maintainer",
         "value": 0.9,
         "confidence": 0.6,
-        "detail": "Active releases \u2014 latest 38d ago, 39d between last two."
+        "detail": "Active releases \u2014 latest 43d ago, 39d between last two."
       },
       {
         "name": "issue_responsiveness",
         "category": "community",
         "value": 0.35,
         "confidence": 0.5,
-        "detail": "Slow \u2014 median first activity within 252h."
+        "detail": "Slow \u2014 median first activity within 493h."
       },
       {
         "name": "issue_close_rate",
         "category": "community",
-        "value": 0.5,
+        "value": 0.2,
         "confidence": 0.5,
-        "detail": "Low close rate \u2014 43% of recent issues resolved."
+        "detail": "Very low close rate \u2014 29% of recent issues resolved."
       },
       {
         "name": "contributor_breadth",
@@ -1762,7 +1741,7 @@
         "category": "community",
         "value": 0.95,
         "confidence": 0.4,
-        "detail": "High visibility \u2014 13,447 stars."
+        "detail": "High visibility \u2014 13,472 stars."
       },
       {
         "name": "security_policy",
@@ -1818,7 +1797,7 @@
         "category": "sustainability",
         "value": 0.9,
         "confidence": 0.4,
-        "detail": "Low issue load \u2014 130 open issues for 13,447 stars."
+        "detail": "Low issue load \u2014 134 open issues for 13,472 stars."
       }
     ]
   }
