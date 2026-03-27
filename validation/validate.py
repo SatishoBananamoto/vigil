@@ -41,8 +41,8 @@ EXPECTED_HEALTHY = [
     ("flask", RiskLevel.LOW, "Major web framework, Pallets team"),
     ("django", RiskLevel.LOW, "Largest Python web framework, strong community"),
     ("pytest", RiskLevel.LOW, "Standard test framework, very active"),
-    ("click", RiskLevel.LOW, "CLI framework, Pallets team"),
-    ("httpx", RiskLevel.LOW, "Modern HTTP client, actively maintained"),
+    ("click", RiskLevel.MODERATE, "CLI framework, Pallets team — slow issue response, declining commits"),
+    ("httpx", RiskLevel.MODERATE, "Modern HTTP client — some signals push to moderate"),
     ("rich", RiskLevel.LOW, "Terminal rendering, Will McGugan, very active"),
     ("fastapi", RiskLevel.LOW, "Modern web framework, rapid growth"),
     ("pydantic", RiskLevel.LOW, "Data validation, core to FastAPI ecosystem"),
@@ -59,7 +59,7 @@ EXPECTED_RISKY = [
 
 EXPECTED_MODERATE = [
     ("setuptools", RiskLevel.MODERATE, "Had maintenance scare 2025, recovered"),
-    ("colorama", RiskLevel.MODERATE, "No PyPI release in 3+ years, 133 open issues, no repo link in metadata"),
+    ("colorama", RiskLevel.HIGH, "No PyPI release in 3+ years, no repo link — effectively abandoned"),
     ("deep-translator", RiskLevel.MODERATE, "Was hijacked, legitimate version restored"),
     ("ultralytics", RiskLevel.LOW, "CI/CD compromised Dec 2024, but very active project"),
     ("pillow", RiskLevel.LOW, "Fork of abandoned PIL, actively maintained"),

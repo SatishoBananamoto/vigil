@@ -2,10 +2,22 @@
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
+
 from vigil.analyzers.base import Analyzer, AnalyzerContext
 from vigil.clients.github import GitHubClient, GitHubRepoInfo
 from vigil.clients.pypi import PyPIPackageInfo
 from vigil.models import Signal, SignalCategory
+
+
+def _days_since_last_release(info: PyPIPackageInfo) -> int | None:
+    """Days since the most recent non-yanked release, or None if unknown."""
+    if not info.releases:
+        return None
+    dated = [r for r in info.releases if r.upload_time and not r.yanked]
+    if not dated:
+        return None
+    return (datetime.now(timezone.utc) - dated[0].upload_time).days
 
 
 class SecurityAnalyzer(Analyzer):
@@ -111,7 +123,11 @@ class SecurityAnalyzer(Analyzer):
             else:
                 value = 0.2
                 detail = "No license detected — legal risk for dependents."
-        elif license_id in ("MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC"):
+        elif license_id in (
+            "MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC",
+            "Unlicense", "0BSD", "Zlib", "PSF-2.0", "HPND", "MPL-2.0",
+            "BSL-1.0", "MIT-0",
+        ):
             value = 0.95
             detail = f"Permissive license: {license_id}."
         elif license_id in ("GPL-2.0-only", "GPL-3.0-only", "AGPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"):
@@ -131,7 +147,11 @@ class SecurityAnalyzer(Analyzer):
         )
 
     def _development_status(self, info: PyPIPackageInfo) -> Signal:
-        """Check PyPI development status classifier."""
+        """Check PyPI development status classifier.
+
+        Confidence decays when the package is stale — a "stable" declaration
+        from 10 years ago tells you what it WAS, not what it IS.
+        """
         status = None
         for c in info.classifiers:
             if c.startswith("Development Status ::"):
@@ -167,11 +187,19 @@ class SecurityAnalyzer(Analyzer):
             value = 0.5
             detail = f"Development status: {status}."
 
+        # Stale signal decay: if positive status but no recent releases,
+        # the declaration is frozen metadata — reduce its influence.
+        confidence = 0.5
+        days = _days_since_last_release(info)
+        if days is not None and days > 730 and value > 0.5:
+            confidence = 0.15
+            detail += " (stale — no release in 2+ years)"
+
         return Signal(
             name="dev_status",
             category=SignalCategory.SECURITY,
             value=value,
-            confidence=0.5,
+            confidence=confidence,
             detail=detail,
             raw_data={"classifier": status},
         )
@@ -208,11 +236,18 @@ class SecurityAnalyzer(Analyzer):
             value = 0.2
             detail = f"High yank rate — {yanked}/{total} releases yanked."
 
+        # Stale signal decay: "0 yanked releases" on a dead package
+        # doesn't mean it's safe — it means nobody's maintaining it.
+        days = _days_since_last_release(info)
+        if days is not None and days > 730 and value > 0.5:
+            confidence *= 0.3
+            detail += " (stale — no release in 2+ years)"
+
         return Signal(
             name="yanked_releases",
             category=SignalCategory.SECURITY,
             value=value,
-            confidence=confidence,
+            confidence=round(confidence, 2),
             detail=detail,
             raw_data={"yanked": yanked, "total": total},
         )
