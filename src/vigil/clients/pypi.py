@@ -41,6 +41,12 @@ class PyPIPackageInfo:
             if key in self.project_urls:
                 return self.project_urls[key]
 
+        # Check Homepage and other URLs if they point to a repo host
+        for key in ("Homepage", "Home", "Project", "Documentation"):
+            url = self.project_urls.get(key, "")
+            if url and ("github.com" in url or "gitlab.com" in url):
+                return url
+
         # Fall back to home_page if it looks like a repo
         if self.home_page and ("github.com" in self.home_page or "gitlab.com" in self.home_page):
             return self.home_page
