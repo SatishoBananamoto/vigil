@@ -72,6 +72,7 @@ class GitHubClient:
             base_url=self.BASE_URL,
             headers=headers,
             timeout=timeout,
+            follow_redirects=True,
         )
         self._cache: dict[str, tuple[float, object]] = {}
         self._cache_ttl = 3600  # 1 hour

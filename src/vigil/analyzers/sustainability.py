@@ -41,6 +41,44 @@ class SustainabilityAnalyzer(Analyzer):
             # 4. Issue to star ratio (proxy for maintenance load)
             signals.append(self._maintenance_load(repo_info))
 
+        elif not repo_info:
+            # No source repo found — severity depends on release recency.
+            # A package with recent releases but no repo link is probably fine
+            # (just old-style metadata). A package with no repo AND stale
+            # releases is likely abandoned.
+            recently_released = False
+            if pypi_info and pypi_info.releases:
+                dated = [r for r in pypi_info.releases if r.upload_time and not r.yanked]
+                if dated:
+                    days_since = (datetime.now(timezone.utc) - dated[0].upload_time).days
+                    recently_released = days_since < 365
+
+            if recently_released:
+                # Active releases but no repo — mild concern, not a crisis
+                signals.append(Signal(
+                    name="no_source_repo",
+                    category=SignalCategory.SUSTAINABILITY,
+                    value=0.5,
+                    confidence=0.4,
+                    detail="No source repository linked, but has recent releases.",
+                ))
+            else:
+                # No repo AND stale releases — strong abandonment signal
+                signals.append(Signal(
+                    name="no_source_repo",
+                    category=SignalCategory.SUSTAINABILITY,
+                    value=0.15,
+                    confidence=0.7,
+                    detail="No source repository linked — cannot assess maintainer health.",
+                ))
+                signals.append(Signal(
+                    name="no_maintainer_signals",
+                    category=SignalCategory.SUSTAINABILITY,
+                    value=0.1,
+                    confidence=0.8,
+                    detail="No maintainer activity data and no recent releases — likely abandoned.",
+                ))
+
         return signals
 
     def _org_backing(self, github: GitHubClient, owner: str) -> Signal:

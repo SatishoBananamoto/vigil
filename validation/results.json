@@ -1,0 +1,1825 @@
+[
+  {
+    "package": "requests",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.2098,
+    "match": true,
+    "reason": "Most popular HTTP library, well-maintained",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 1.0,
+        "confidence": 0.8,
+        "detail": "Active \u2014 last push 1d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Growing \u2014 commits up 2600% quarter-over-quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.6,
+        "confidence": 0.8,
+        "detail": "Bus factor 4 \u2014 small core team."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.4,
+        "confidence": 0.6,
+        "detail": "Slow releases \u2014 latest 214d ago."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.35,
+        "confidence": 0.5,
+        "detail": "Slow \u2014 median first activity within 369h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "High close rate \u2014 82% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 53,876 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md, Code of Conduct."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: Apache-2.0."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 2/157 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.75,
+        "confidence": 0.7,
+        "detail": "Backed by small organization 'psf'."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 15.1 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.4,
+        "detail": "Low issue load \u2014 299 open issues for 53,876 stars."
+      }
+    ]
+  },
+  {
+    "package": "flask",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.1963,
+    "match": true,
+    "reason": "Major web framework, Pallets team",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.8,
+        "detail": "Recent activity \u2014 last push 12d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Growing \u2014 commits up 343% quarter-over-quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.6,
+        "confidence": 0.8,
+        "detail": "Bus factor 4 \u2014 small core team."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Moderate release pace \u2014 latest 30d ago."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.35,
+        "confidence": 0.5,
+        "detail": "Slow \u2014 median first activity within 344h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "High close rate \u2014 100% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 71,373 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md, Code of Conduct."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: BSD-3-Clause."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/64 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.75,
+        "confidence": 0.7,
+        "detail": "Backed by small organization 'pallets'."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 16.0 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.5,
+        "confidence": 0.3,
+        "detail": "No FUNDING.yml \u2014 unknown funding status."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.4,
+        "detail": "Low issue load \u2014 3 open issues for 71,373 stars."
+      }
+    ]
+  },
+  {
+    "package": "django",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.156,
+    "match": true,
+    "reason": "Largest Python web framework, strong community",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 1.0,
+        "confidence": 0.8,
+        "detail": "Active \u2014 last push 0d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.7,
+        "confidence": 0.7,
+        "detail": "Stable \u2014 commits at 85% of previous quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Bus factor 14 \u2014 broad contributor base."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Active releases \u2014 latest 17d ago, 0d between last two."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.2,
+        "detail": "Insufficient issue data for response time analysis."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.2,
+        "detail": "Insufficient issue data."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 87,104 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md, Code of Conduct."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: BSD-3-Clause."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 2/426 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.75,
+        "confidence": 0.7,
+        "detail": "Backed by small organization 'django'."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 13.9 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.4,
+        "detail": "Low issue load \u2014 429 open issues for 87,104 stars."
+      }
+    ]
+  },
+  {
+    "package": "pytest",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.2474,
+    "match": true,
+    "reason": "Standard test framework, very active",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 1.0,
+        "confidence": 0.8,
+        "detail": "Active \u2014 last push 0d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.4,
+        "confidence": 0.7,
+        "detail": "Declining \u2014 commits at 46% of previous quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.8,
+        "confidence": 0.8,
+        "detail": "Bus factor 6 \u2014 healthy contributor base."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Moderate release pace \u2014 latest 104d ago."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.15,
+        "confidence": 0.5,
+        "detail": "Very slow \u2014 median first activity within 1554h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "Low close rate \u2014 44% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 13,721 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md, Code of Conduct."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: MIT."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 6 - Mature."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 1/189 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Backed by organization 'pytest-dev' (77 repos)."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 10.8 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.5,
+        "confidence": 0.4,
+        "detail": "Heavy issue load \u2014 1012 open issues for 13,721 stars."
+      }
+    ]
+  },
+  {
+    "package": "click",
+    "expected_level": "low",
+    "actual_level": "moderate",
+    "actual_score": 0.2705,
+    "match": true,
+    "reason": "CLI framework, Pallets team",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 1.0,
+        "confidence": 0.8,
+        "detail": "Active \u2014 last push 5d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.7,
+        "detail": "Dropping fast \u2014 commits at 2% of previous quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.8,
+        "confidence": 0.8,
+        "detail": "Bus factor 5 \u2014 healthy contributor base."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Moderate release pace \u2014 latest 125d ago."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.15,
+        "confidence": 0.5,
+        "detail": "Very slow \u2014 median first activity within 3490h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "Low close rate \u2014 40% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 17,358 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md, Code of Conduct."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: BSD-3-Clause."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 1/59 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.75,
+        "confidence": 0.7,
+        "detail": "Backed by small organization 'pallets'."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 11.9 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.5,
+        "confidence": 0.3,
+        "detail": "No FUNDING.yml \u2014 unknown funding status."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.4,
+        "detail": "Low issue load \u2014 161 open issues for 17,358 stars."
+      }
+    ]
+  },
+  {
+    "package": "httpx",
+    "expected_level": "low",
+    "actual_level": "moderate",
+    "actual_score": 0.2687,
+    "match": true,
+    "reason": "Modern HTTP client, actively maintained",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.8,
+        "detail": "Recent activity \u2014 last push 19d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.7,
+        "detail": "Dropping fast \u2014 commits at 25% of previous quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.6,
+        "confidence": 0.8,
+        "detail": "Bus factor 3 \u2014 small core team."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.4,
+        "confidence": 0.6,
+        "detail": "Slow releases \u2014 latest 186d ago."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.2,
+        "detail": "Insufficient issue data for response time analysis."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.2,
+        "detail": "Insufficient issue data."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 15,153 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md, Code of Conduct."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: BSD-3-Clause."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.5,
+        "detail": "Beta status: 4 - Beta."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/74 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.75,
+        "confidence": 0.7,
+        "detail": "Backed by small organization 'encode'."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 7.0 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.4,
+        "detail": "Low issue load \u2014 149 open issues for 15,153 stars."
+      }
+    ]
+  },
+  {
+    "package": "rich",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.2333,
+    "match": true,
+    "reason": "Terminal rendering, Will McGugan, very active",
+    "error": null,
+    "signals": [
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Active releases \u2014 latest 29d ago, 18d between last two."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 1/205 releases yanked."
+      },
+      {
+        "name": "no_source_repo",
+        "category": "sustainability",
+        "value": 0.5,
+        "confidence": 0.4,
+        "detail": "No source repository linked, but has recent releases."
+      }
+    ]
+  },
+  {
+    "package": "fastapi",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.1692,
+    "match": true,
+    "reason": "Modern web framework, rapid growth",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 1.0,
+        "confidence": 0.8,
+        "detail": "Active \u2014 last push 0d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Growing \u2014 commits up 135% quarter-over-quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.6,
+        "confidence": 0.8,
+        "detail": "Bus factor 3 \u2014 small core team."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Active releases \u2014 latest 19d ago, 0d between last two."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.2,
+        "detail": "Insufficient issue data for response time analysis."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.2,
+        "detail": "Insufficient issue data."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 96,405 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: MIT."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.5,
+        "detail": "Beta status: 4 - Beta."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/286 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.75,
+        "confidence": 0.7,
+        "detail": "Backed by small organization 'fastapi'."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 7.3 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.4,
+        "detail": "Low issue load \u2014 165 open issues for 96,405 stars."
+      }
+    ]
+  },
+  {
+    "package": "pydantic",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.2165,
+    "match": true,
+    "reason": "Data validation, core to FastAPI ecosystem",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 1.0,
+        "confidence": 0.8,
+        "detail": "Active \u2014 last push 2d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.4,
+        "confidence": 0.7,
+        "detail": "Declining \u2014 commits at 47% of previous quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.8,
+        "confidence": 0.8,
+        "detail": "Bus factor 8 \u2014 healthy contributor base."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Active releases \u2014 latest 24d ago, 0d between last two."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.35,
+        "confidence": 0.5,
+        "detail": "Slow \u2014 median first activity within 488h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "Low close rate \u2014 48% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 27,275 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: MIT."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 2/196 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Backed by organization 'pydantic' (72 repos)."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 8.9 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.7,
+        "confidence": 0.4,
+        "detail": "Moderate issue load \u2014 541 open issues for 27,275 stars."
+      }
+    ]
+  },
+  {
+    "package": "numpy",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.2333,
+    "match": true,
+    "reason": "Scientific computing foundation, NumFOCUS backed",
+    "error": null,
+    "signals": [
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Active releases \u2014 latest 11d ago, 36d between last two."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 1/143 releases yanked."
+      },
+      {
+        "name": "no_source_repo",
+        "category": "sustainability",
+        "value": 0.5,
+        "confidence": 0.4,
+        "detail": "No source repository linked, but has recent releases."
+      }
+    ]
+  },
+  {
+    "package": "pycrypto",
+    "expected_level": "critical",
+    "actual_level": "high",
+    "actual_score": 0.6047,
+    "match": true,
+    "reason": "Abandoned since 2014, known CVEs, 1.5M downloads/month",
+    "error": null,
+    "signals": [
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.6,
+        "detail": "Stale \u2014 last release 4291d ago."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/13 releases yanked."
+      },
+      {
+        "name": "no_source_repo",
+        "category": "sustainability",
+        "value": 0.15,
+        "confidence": 0.7,
+        "detail": "No source repository linked \u2014 cannot assess maintainer health."
+      },
+      {
+        "name": "no_maintainer_signals",
+        "category": "sustainability",
+        "value": 0.1,
+        "confidence": 0.8,
+        "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      }
+    ]
+  },
+  {
+    "package": "nose",
+    "expected_level": "critical",
+    "actual_level": "high",
+    "actual_score": 0.6047,
+    "match": true,
+    "reason": "Abandoned since 2015, broken on Python 3.12",
+    "error": null,
+    "signals": [
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.6,
+        "detail": "Stale \u2014 last release 3944d ago."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/14 releases yanked."
+      },
+      {
+        "name": "no_source_repo",
+        "category": "sustainability",
+        "value": 0.15,
+        "confidence": 0.7,
+        "detail": "No source repository linked \u2014 cannot assess maintainer health."
+      },
+      {
+        "name": "no_maintainer_signals",
+        "category": "sustainability",
+        "value": 0.1,
+        "confidence": 0.8,
+        "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      }
+    ]
+  },
+  {
+    "package": "distribute",
+    "expected_level": "high",
+    "actual_level": "high",
+    "actual_score": 0.6047,
+    "match": true,
+    "reason": "Superseded by setuptools, abandoned",
+    "error": null,
+    "signals": [
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.6,
+        "detail": "Stale \u2014 last release 4641d ago."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/49 releases yanked."
+      },
+      {
+        "name": "no_source_repo",
+        "category": "sustainability",
+        "value": 0.15,
+        "confidence": 0.7,
+        "detail": "No source repository linked \u2014 cannot assess maintainer health."
+      },
+      {
+        "name": "no_maintainer_signals",
+        "category": "sustainability",
+        "value": 0.1,
+        "confidence": 0.8,
+        "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      }
+    ]
+  },
+  {
+    "package": "mimeparse",
+    "expected_level": "high",
+    "actual_level": "high",
+    "actual_score": 0.6845,
+    "match": true,
+    "reason": "Unmaintained, last release 2014",
+    "error": null,
+    "signals": [
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.6,
+        "detail": "Stale \u2014 last release 5659d ago."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.5,
+        "confidence": 0.2,
+        "detail": "No development status classifier on PyPI."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/3 releases yanked."
+      },
+      {
+        "name": "no_source_repo",
+        "category": "sustainability",
+        "value": 0.15,
+        "confidence": 0.7,
+        "detail": "No source repository linked \u2014 cannot assess maintainer health."
+      },
+      {
+        "name": "no_maintainer_signals",
+        "category": "sustainability",
+        "value": 0.1,
+        "confidence": 0.8,
+        "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      }
+    ]
+  },
+  {
+    "package": "pep8",
+    "expected_level": "high",
+    "actual_level": "high",
+    "actual_score": 0.6047,
+    "match": true,
+    "reason": "Renamed to pycodestyle, original abandoned",
+    "error": null,
+    "signals": [
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.6,
+        "detail": "Stale \u2014 last release 3069d ago."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/37 releases yanked."
+      },
+      {
+        "name": "no_source_repo",
+        "category": "sustainability",
+        "value": 0.15,
+        "confidence": 0.7,
+        "detail": "No source repository linked \u2014 cannot assess maintainer health."
+      },
+      {
+        "name": "no_maintainer_signals",
+        "category": "sustainability",
+        "value": 0.1,
+        "confidence": 0.8,
+        "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      }
+    ]
+  },
+  {
+    "package": "setuptools",
+    "expected_level": "moderate",
+    "actual_level": "moderate",
+    "actual_score": 0.2722,
+    "match": true,
+    "reason": "Had maintenance scare 2025, recovered",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.8,
+        "detail": "Recent activity \u2014 last push 11d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Growing \u2014 commits up 700% quarter-over-quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.6,
+        "confidence": 0.8,
+        "detail": "Bus factor 4 \u2014 small core team."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Active releases \u2014 latest 11d ago, 28d between last two."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.15,
+        "confidence": 0.5,
+        "detail": "Very slow \u2014 median first activity within 5805h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.2,
+        "confidence": 0.5,
+        "detail": "Very low close rate \u2014 18% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.8,
+        "confidence": 0.4,
+        "detail": "Well-known \u2014 2,815 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.3,
+        "confidence": 0.6,
+        "detail": "No security policy or contributing guidelines."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: MIT."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 10/623 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Backed by organization 'pypa' (58 repos)."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 10.0 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.3,
+        "confidence": 0.4,
+        "detail": "Overwhelming issue load \u2014 637 open issues for 2,815 stars."
+      }
+    ]
+  },
+  {
+    "package": "colorama",
+    "expected_level": "moderate",
+    "actual_level": "high",
+    "actual_score": 0.6422,
+    "match": true,
+    "reason": "No PyPI release in 3+ years, 133 open issues, no repo link in metadata",
+    "error": null,
+    "signals": [
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.6,
+        "detail": "Stale \u2014 last release 1243d ago."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 1/46 releases yanked."
+      },
+      {
+        "name": "no_source_repo",
+        "category": "sustainability",
+        "value": 0.15,
+        "confidence": 0.7,
+        "detail": "No source repository linked \u2014 cannot assess maintainer health."
+      },
+      {
+        "name": "no_maintainer_signals",
+        "category": "sustainability",
+        "value": 0.1,
+        "confidence": 0.8,
+        "detail": "No maintainer activity data and no recent releases \u2014 likely abandoned."
+      }
+    ]
+  },
+  {
+    "package": "deep-translator",
+    "expected_level": "moderate",
+    "actual_level": "moderate",
+    "actual_score": 0.3828,
+    "match": true,
+    "reason": "Was hijacked, legitimate version restored",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 0.1,
+        "confidence": 0.8,
+        "detail": "Inactive \u2014 last push 605d ago."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.8,
+        "confidence": 0.8,
+        "detail": "Bus factor 10 \u2014 healthy contributor base."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.15,
+        "confidence": 0.6,
+        "detail": "Stale \u2014 last release 996d ago."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.35,
+        "confidence": 0.5,
+        "detail": "Slow \u2014 median first activity within 454h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.2,
+        "confidence": 0.5,
+        "detail": "Very low close rate \u2014 12% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.8,
+        "confidence": 0.4,
+        "detail": "Well-known \u2014 1,973 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.95,
+        "confidence": 0.8,
+        "detail": "Permissive license: Apache-2.0."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 5 - Production/Stable."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/72 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.65,
+        "confidence": 0.7,
+        "detail": "Individual maintainer (nidhaloff) affiliated with Bosch."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.4,
+        "confidence": 0.6,
+        "detail": "Aging without maintenance \u2014 5.8 years old, no recent activity."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.7,
+        "confidence": 0.4,
+        "detail": "Moderate issue load \u2014 64 open issues for 1,973 stars."
+      }
+    ]
+  },
+  {
+    "package": "ultralytics",
+    "expected_level": "low",
+    "actual_level": "low",
+    "actual_score": 0.2379,
+    "match": true,
+    "reason": "CI/CD compromised Dec 2024, but very active project",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 1.0,
+        "confidence": 0.8,
+        "detail": "Active \u2014 last push 0d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Growing \u2014 commits up 123% quarter-over-quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.8,
+        "confidence": 0.8,
+        "detail": "Bus factor 5 \u2014 healthy contributor base."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Active releases \u2014 latest 1d ago, 2d between last two."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.15,
+        "confidence": 0.5,
+        "detail": "Very slow \u2014 median first activity within 757h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "Low close rate \u2014 40% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 54,741 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md, Code of Conduct."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.8,
+        "detail": "License: AGPL-3.0 \u2014 verify compatibility."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.5,
+        "detail": "Beta status: 4 - Beta."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.7,
+        "confidence": 0.6,
+        "detail": "Mostly clean \u2014 9/699 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.7,
+        "detail": "Backed by organization 'ultralytics' (50 repos)."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.85,
+        "confidence": 0.6,
+        "detail": "Established and active \u2014 3.5 years old."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.5,
+        "confidence": 0.3,
+        "detail": "No FUNDING.yml \u2014 unknown funding status."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.4,
+        "detail": "Low issue load \u2014 301 open issues for 54,741 stars."
+      }
+    ]
+  },
+  {
+    "package": "pillow",
+    "expected_level": "low",
+    "actual_level": "moderate",
+    "actual_score": 0.2634,
+    "match": true,
+    "reason": "Fork of abandoned PIL, actively maintained",
+    "error": null,
+    "signals": [
+      {
+        "name": "push_recency",
+        "category": "maintainer",
+        "value": 1.0,
+        "confidence": 0.8,
+        "detail": "Active \u2014 last push 0d ago."
+      },
+      {
+        "name": "commit_trend",
+        "category": "maintainer",
+        "value": 0.7,
+        "confidence": 0.7,
+        "detail": "Stable \u2014 commits at 97% of previous quarter."
+      },
+      {
+        "name": "bus_factor",
+        "category": "maintainer",
+        "value": 0.6,
+        "confidence": 0.8,
+        "detail": "Bus factor 4 \u2014 small core team."
+      },
+      {
+        "name": "release_cadence",
+        "category": "maintainer",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Active releases \u2014 latest 38d ago, 39d between last two."
+      },
+      {
+        "name": "issue_responsiveness",
+        "category": "community",
+        "value": 0.35,
+        "confidence": 0.5,
+        "detail": "Slow \u2014 median first activity within 252h."
+      },
+      {
+        "name": "issue_close_rate",
+        "category": "community",
+        "value": 0.5,
+        "confidence": 0.5,
+        "detail": "Low close rate \u2014 43% of recent issues resolved."
+      },
+      {
+        "name": "contributor_breadth",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.7,
+        "detail": "Broad contributor base \u2014 30+ contributors."
+      },
+      {
+        "name": "community_size",
+        "category": "community",
+        "value": 0.95,
+        "confidence": 0.4,
+        "detail": "High visibility \u2014 13,447 stars."
+      },
+      {
+        "name": "security_policy",
+        "category": "security",
+        "value": 0.6,
+        "confidence": 0.6,
+        "detail": "No security policy, but has: CONTRIBUTING.md."
+      },
+      {
+        "name": "license",
+        "category": "security",
+        "value": 0.2,
+        "confidence": 0.8,
+        "detail": "No license detected \u2014 legal risk for dependents."
+      },
+      {
+        "name": "dev_status",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.5,
+        "detail": "Declared stable: 6 - Mature."
+      },
+      {
+        "name": "yanked_releases",
+        "category": "security",
+        "value": 0.9,
+        "confidence": 0.6,
+        "detail": "Clean release history \u2014 0/105 releases yanked."
+      },
+      {
+        "name": "org_backing",
+        "category": "sustainability",
+        "value": 0.75,
+        "confidence": 0.7,
+        "detail": "Backed by small organization 'python-pillow'."
+      },
+      {
+        "name": "project_maturity",
+        "category": "sustainability",
+        "value": 0.95,
+        "confidence": 0.6,
+        "detail": "Mature and active \u2014 13.7 years old, recently maintained."
+      },
+      {
+        "name": "funding",
+        "category": "sustainability",
+        "value": 0.8,
+        "confidence": 0.5,
+        "detail": "FUNDING.yml present \u2014 project accepts sponsorship."
+      },
+      {
+        "name": "maintenance_load",
+        "category": "sustainability",
+        "value": 0.9,
+        "confidence": 0.4,
+        "detail": "Low issue load \u2014 130 open issues for 13,447 stars."
+      }
+    ]
+  }
+]
