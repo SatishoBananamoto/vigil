@@ -35,7 +35,7 @@ runs:
   steps:
     - name: Install vigil
       shell: bash
-      run: pip install vigil-risk
+      run: pip install "vigil-risk>=0.2.1"
 
     - name: Run scan
       id: scan
