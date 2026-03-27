@@ -108,10 +108,12 @@ def scan(file: str, detail: bool, as_json: bool, cascade: bool):
 @click.option("--json", "as_json", is_flag=True, help="Output as JSON.")
 def check(package: str, cascade: bool, as_json: bool):
     """Check a single package's health."""
-    console.print(f"[dim]Checking {package}...[/]")
+    if not as_json:
+        console.print(f"[dim]Checking {package}...[/]")
 
     with PyPIClient() as pypi, GitHubClient() as github:
-        _show_auth_status(github, 1)
+        if not as_json:
+            _show_auth_status(github, 1)
         ctx = AnalyzerContext(github=github, pypi=pypi)
         resolver = DependencyResolver(pypi) if cascade else None
 
@@ -128,9 +130,10 @@ def check(package: str, cascade: bool, as_json: bool):
                 )
             return
 
-        _show_budget_summary(github)
-        if resolver:
-            console.print(f"[dim]Resolved {resolver.packages_fetched} transitive packages from PyPI.[/]")
+        if not as_json:
+            _show_budget_summary(github)
+            if resolver:
+                console.print(f"[dim]Resolved {resolver.packages_fetched} transitive packages from PyPI.[/]")
 
     if as_json:
         import json as json_mod
