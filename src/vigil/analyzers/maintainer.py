@@ -240,11 +240,18 @@ class MaintainerAnalyzer(Analyzer):
             value = 0.15
             detail = f"Stale — last release {days_since_latest}d ago."
 
+        # Micro-library awareness: small packages (< 50KB) may be
+        # feature-complete and don't need frequent releases.
+        confidence = 0.6
+        if info.package_size > 0 and info.package_size < 50_000 and value < 0.5:
+            confidence = 0.3
+            detail += " (micro-library — may be feature-complete)"
+
         return Signal(
             name="release_cadence",
             category=SignalCategory.MAINTAINER,
             value=value,
-            confidence=0.6,
+            confidence=confidence,
             detail=detail,
             raw_data={
                 "days_since_latest": days_since_latest,

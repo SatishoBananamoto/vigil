@@ -32,6 +32,7 @@ class PyPIPackageInfo:
     classifiers: list[str] = field(default_factory=list)
     releases: list[PyPIRelease] = field(default_factory=list)
     requires_dist: list[str] = field(default_factory=list)
+    package_size: int = 0  # Smallest wheel/sdist size in bytes
 
     @property
     def repo_url(self) -> str | None:
@@ -113,6 +114,14 @@ class PyPIClient:
             reverse=True,
         )
 
+        # Get package size from latest distribution files
+        urls = data.get("urls", [])
+        package_size = 0
+        for u in urls:
+            size = u.get("size", 0)
+            if size > 0 and (package_size == 0 or size < package_size):
+                package_size = size
+
         return PyPIPackageInfo(
             name=info.get("name", name),
             version=info.get("version", ""),
@@ -125,6 +134,7 @@ class PyPIClient:
             classifiers=info.get("classifiers", []),
             releases=releases,
             requires_dist=info.get("requires_dist") or [],
+            package_size=package_size,
         )
 
     def close(self):
