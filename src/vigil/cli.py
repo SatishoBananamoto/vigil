@@ -138,7 +138,8 @@ def check(package: str, cascade: bool):
 @click.argument("file", type=click.Path(exists=True))
 @click.option("--name", "-n", default=None, help="Project name for the report header.")
 @click.option("--output", "-o", default=None, help="Write report to file instead of stdout.")
-def report(file: str, name: str, output: str):
+@click.option("--cascade", "-c", is_flag=True, help="Include transitive dependency analysis.")
+def report(file: str, name: str, output: str, cascade: bool):
     """Generate a markdown dependency health report."""
     from datetime import datetime, timezone
 
@@ -154,9 +155,10 @@ def report(file: str, name: str, output: str):
 
     with PyPIClient() as pypi, GitHubClient() as github:
         ctx = AnalyzerContext(github=github, pypi=pypi)
+        resolver = DependencyResolver(pypi) if cascade else None
         for dep in deps:
             try:
-                profile = _analyze_dependency(dep.name, ctx)
+                profile = _analyze_dependency(dep.name, ctx, resolver=resolver)
             except RateLimitError:
                 break
             result.profiles[dep.name] = profile
