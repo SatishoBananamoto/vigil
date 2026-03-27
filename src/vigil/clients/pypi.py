@@ -36,15 +36,23 @@ class PyPIPackageInfo:
     @property
     def repo_url(self) -> str | None:
         """Best guess at source repository URL."""
-        # Check project_urls for common keys
-        for key in ("Source", "Source Code", "Repository", "GitHub", "Code"):
-            if key in self.project_urls:
-                return self.project_urls[key]
+        # Build case-insensitive lookup
+        urls_lower = {k.lower(): v for k, v in self.project_urls.items()}
 
-        # Check Homepage and other URLs if they point to a repo host
-        for key in ("Homepage", "Home", "Project", "Documentation"):
-            url = self.project_urls.get(key, "")
+        # Check for explicit repo keys (case-insensitive)
+        for key in ("source", "source code", "repository", "github", "code"):
+            if key in urls_lower:
+                return urls_lower[key]
+
+        # Check other URLs if they point to a repo host
+        for key in ("homepage", "home", "project", "documentation"):
+            url = urls_lower.get(key, "")
             if url and ("github.com" in url or "gitlab.com" in url):
+                return url
+
+        # Check ALL project_urls for repo host patterns
+        for url in self.project_urls.values():
+            if "github.com" in url or "gitlab.com" in url:
                 return url
 
         # Fall back to home_page if it looks like a repo
