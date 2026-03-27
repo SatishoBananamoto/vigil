@@ -84,6 +84,31 @@ Result: **100% exact match** on risk level classification.
 
 Vigil doesn't trust frozen metadata. A "Production/Stable" classifier from 2014 on an abandoned package gets its confidence reduced from 0.5 to 0.15. Static signals decay when the package shows no recent activity.
 
+## GitHub Action
+
+Add dependency scanning to your CI/CD:
+
+```yaml
+- uses: SatishoBananamoto/vigil@main
+  with:
+    file: pyproject.toml
+    fail-on: high        # fail if any dep is HIGH or CRITICAL
+    cascade: true        # include transitive dependencies
+```
+
+Posts a markdown risk report as a PR comment. See [action.yml](action.yml) for all options.
+
+## Markdown Reports
+
+Generate standalone reports:
+
+```bash
+vigil report pyproject.toml --name "My Project" -o report.md
+vigil report requirements.txt --cascade -o report.md
+```
+
+See [ai-agent-dependency-risk](https://github.com/SatishoBananamoto/ai-agent-dependency-risk) for example reports on CrewAI, LangChain, AutoGen, and more.
+
 ## License
 
 MIT
