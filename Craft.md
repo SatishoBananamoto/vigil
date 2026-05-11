@@ -42,6 +42,7 @@
 - [ ] Commit trend with linear regression (not just quarter-over-quarter)
 - [ ] Issue response time refinement (use comments API, not just updated_at proxy)
 - [x] Graceful degradation when signals fail (partial results on rate limit, not crash)
+- [ ] Continue
 
 **Phase 2: Dependency Graph** (COMPLETE)
 - [x] Parse requirements.txt / pyproject.toml
@@ -49,33 +50,29 @@
 - [x] Cascade risk mapping (3 signals: worst transitive, breadth, fragility)
 - [x] Depth-weighted risk aggregation (decay: 1.0 / 0.7 / 0.4 by depth)
 
-**Phase 2.5: Validation** (IN PROGRESS)
+**Phase 2.5: Validation** (COMPLETE — Session 4)
 - [x] Research: 24 real PyPI incidents documented (intel/pypi-incidents-2022-2025.md)
 - [x] Curate testable set: 10 healthy controls + 5 abandoned + 5 gray-area packages
 - [x] Build validation script (validation/validate.py) — runs vigil, compares actual vs expected, reports hits/misses
 - [x] Run validation: 20 packages scanned with GitHub auth
 - [x] Analyze: identified two root causes for mismatches
-  - Root cause 1: old packages don't link GitHub repos in PyPI metadata → only 3 signals fire → score too low
-  - Root cause 2: stale positive signals (dev_status "stable", 0 yanked releases) dilute abandoned package scores
 - [x] Implement fix: conditional penalty signals (no_source_repo + no_maintainer_signals)
-  - Soft penalty when no repo but recent releases (value 0.5, conf 0.4)
-  - Hard penalty when no repo AND stale releases (value 0.15/0.1, conf 0.7/0.8)
 - [x] Fixed github.py: added follow_redirects=True (deep-translator repo rename caused 301 crash)
-- [x] Reclassified colorama: expected LOW → MODERATE (no release in 3yr is a real sustainability concern)
-- [x] Re-ran validation through 3 iterations. Final results:
-  - **70% exact match** (14/20 on exact level)
-  - **95% within 1 level** (19/20 with tolerance)
-  - Healthy avg: 0.225 | Risky avg: 0.621 | Moderate avg: 0.432 — clear separation
-  - Remaining 6 mismatches (all off by 1 level):
-    - click (0.271), httpx (0.269), pillow (0.263): scored MODERATE, expected LOW — barely over 0.25 boundary
-    - pycrypto (0.605), nose (0.605): scored HIGH, expected CRITICAL — stale positive signals dilute score
-    - colorama (0.642): scored HIGH, expected MODERATE — genuinely stale, debatable
-- [ ] Fix remaining mismatches: two approaches identified, decision pending
-  - Option A: Adjust boundary — move LOW/MODERATE from 0.25 to 0.30 (fixes click/httpx/pillow, simple)
-  - Option B: Reduce confidence on stale positive signals (dev_status, yanked_releases) for packages with no recent activity (more principled, fixes pycrypto/nose reaching CRITICAL)
-- [ ] Document final results (validation artifact)
+- [x] Reclassified colorama: expected LOW → MODERATE
+- [x] Re-ran validation through 3 iterations (70% exact → 100% exact after Session 4 fixes)
+- [x] Fix remaining mismatches — chose Option B: stale signal confidence reduction (D-013) — `commit:307bb43`
+- [x] Achieved **100% exact match** (20/20) — `commit:01b33e1`
+- [x] Shipped to PyPI as vigil-risk v0.2.0 → v0.2.3 — `commit:67619ea`
 
 **Challenge identified:** Most compromised packages were removed from PyPI. Validation must focus on: (a) known-abandoned packages still on PyPI (pycrypto, nose), and (b) healthy controls (requests, flask, pytest) to verify signal discrimination.
+
+**Validation artifact hygiene** (OPEN — Codex 2026-05-11)
+- [x] Confirm local code baseline: 115 tests passing after version metadata guard
+- [x] Identify `validation/results.json` as a stale generated live-data artifact from 2026-03-27
+- [x] Do not commit current `validation/results.json`: it expects colorama CRITICAL while `validation/validate.py` expects colorama MODERATE
+- [ ] Re-run `python validation/validate.py` with current code, network, and GitHub auth before promoting any new results artifact
+- [ ] Reconcile README's historical 100% exact claim if a fresh live run no longer reproduces it
+- [ ] Continue
 
 **Phase 3: Intelligence**
 - [ ] Trend analysis (is this project growing, stable, or declining?)
@@ -83,6 +80,7 @@
 - [ ] Regulatory readiness scoring (CRA compliance, SBOM, attestation)
 - [ ] AI-specific risks (slopsquatting exposure, hallucination probability)
 - [ ] Migration difficulty assessment
+- [ ] Continue
 
 **Phase 4: Output & Integration**
 - [x] CLI interface (vigil scan, vigil check)
@@ -91,6 +89,7 @@
 - [ ] CI integration mode (exit codes, thresholds)
 - [ ] Caching layer (don't re-fetch unchanged data)
 - [ ] Markdown output mode
+- [ ] Continue
 
 ---
 
@@ -201,3 +200,64 @@
 4. **Integration tests** — End-to-end pipeline test with mocked APIs.
 5. **Phase 1.5 remaining** — Commit trend regression, issue response via comments API.
 6. **npm ecosystem** — Phase 3.
+
+### 2026-03-27 — Session 4: Threshold Fix → Ship → Harden (UNDOCUMENTED — reconstructed 2026-03-28)
+
+> This session was not documented at the time. 25 commits over ~5 hours (00:08–04:55)
+> with zero Craft.md updates. Reconstructed from git log during nexus system build.
+
+**Phase 1: Threshold fix + PyPI (00:08–00:49)**
+- Fixed 6 threshold mismatches: stale signal decay + license expansion — `commit:307bb43`
+  - Chose stale signal confidence reduction (Option B from Session 3) — more principled than boundary shift
+- Achieved 100% exact match validation — `commit:01b33e1`
+- Cascade validation: 100% tolerant, identified scoring asymmetry — `commit:b1766db`
+- REVIEW.md v4: upgraded to A grade — `commit:9405e07`
+- Shipped to PyPI as `vigil-risk` v0.2.0 — `commit:a99a998`
+
+**Phase 2: Documentation + Features (01:15–02:52)**
+- Scroll integration: .scroll/ ignore + CLAUDE.md from scroll extraction — `commit:3245159`, `commit:51cbcb3`
+- Added README (was missing — package on PyPI without one) — `commit:302ebcd`
+- Built `vigil report` command: markdown dependency health reports — `commit:f698038`
+- Added --cascade flag to report — `commit:c2bf99d`
+- Built GitHub Action for CI/CD dependency scanning — `commit:2b51780`
+- Added GitHub Action + report docs to README — `commit:fe59519`
+- Released vigil-risk v0.2.1 — `commit:7b890a4`
+- Added --json flag to `vigil check` — `commit:93cafd3`
+- Fixed GitHub Action threshold check: 'none' mode, portable shell — `commit:a9ba656`
+
+**Phase 3: Bug fixes + hardening (03:32–04:55)**
+- Fixed repo URL detection: check Homepage for GitHub links — `commit:5f903c1`
+- Case-insensitive repo URL matching + fallback to any GitHub URL — `commit:1129349`
+- Added 11 tests for repo URL detection (sniffio/jsonref bug) — `commit:af11d90`
+- Corrected colorama expectation: MODERATE not CRITICAL — `commit:0fd0a50`
+- Added 3 integration tests + fixed check --json output pollution — `commit:b1d31af`
+- Added micro-library awareness: reduce release penalty for tiny packages — `commit:8b8d2b6`
+- Fixed archived-repo false positive for packages with recent releases — `commit:0a908d1`
+- Added 2 tests for archived-repo + releases logic — `commit:69e4b45`
+- Added CI: run tests on push and PR — `commit:a42ed46`
+- Released vigil-risk v0.2.3 (all fixes) — `commit:67619ea`
+
+**Decisions made (not logged at the time):**
+
+| ID | Date | Decision | Why |
+|----|------|----------|-----|
+| D-013 | 2026-03-27 | Stale signal confidence reduction over boundary shift | More principled — addresses root cause (stale data diluting scores), not symptom (boundary too tight) |
+| D-014 | 2026-03-27 | Case-insensitive repo URL matching with Homepage fallback | Packages like sniffio/jsonref had GitHub URLs only in Homepage metadata, not in Project-URL. Case mismatch caused missed matches. |
+| D-015 | 2026-03-27 | Micro-library awareness: reduce release penalty for tiny packages | Small packages (< 1000 downloads/month) release less frequently. Penalizing them for infrequent releases is false signal. |
+| D-016 | 2026-03-27 | Archived-repo exception for packages with recent releases | Some packages have archived GitHub repos but active PyPI releases (maintained outside GitHub). The archived signal was causing false positives. |
+
+**State at end:**
+- Version: v0.2.3 on PyPI
+- Tests: 114 passing (was 66 after Session 2)
+- Validation: 100% exact match (20/20 packages)
+- REVIEW.md: A grade
+- CI: GitHub Actions, tests on push/PR
+- GitHub Action: available for CI/CD integration
+
+### 2026-05-11 — Session 5: Codex baseline repair
+
+- **Worked on:** Tracker adoption, version metadata drift, and validation artifact triage.
+- **Completed:** Added `.graft`, updated Craft.md with reconstructed Session 4 and current validation-artifact warning, synced `vigil.__version__` to pyproject `0.2.3`, and added a package-version regression test.
+- **Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 115 tests; `python3 -m compileall src tests validation` passed; `git diff --check` passed.
+- **Held back:** `validation/results.json` remains dirty and uncommitted because it is a stale generated artifact whose colorama expectation contradicts current `validation/validate.py`.
+- **Next:** Run a fresh authenticated validation pass before deciding whether to update `validation/results.json` or public validation claims, then Continue.
