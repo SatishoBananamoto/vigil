@@ -73,12 +73,15 @@ vigil auth status   # Check your budget
 
 ## Validation
 
-Vigil has been validated against 20 real PyPI packages:
+Vigil includes a live validation harness for 20 real PyPI packages:
 - 10 healthy controls (requests, django, pytest, numpy, etc.)
 - 5 known-abandoned (pycrypto, nose, distribute, etc.)
 - 5 gray-area (setuptools, colorama, deep-translator)
 
-Result: **100% exact match** on risk level classification.
+The historical March 2026 threshold run reached 100% exact match on that
+snapshot. Treat that as calibration evidence, not a permanent benchmark:
+PyPI and GitHub metadata changes over time. Re-run `python validation/validate.py`
+with current network access and GitHub auth before citing current accuracy.
 
 ## Stale Signal Decay
 

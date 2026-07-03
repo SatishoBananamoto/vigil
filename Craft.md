@@ -71,7 +71,16 @@
 - [x] Identify `validation/results.json` as a stale generated live-data artifact from 2026-03-27
 - [x] Do not commit current `validation/results.json`: it expects colorama CRITICAL while `validation/validate.py` expects colorama MODERATE
 - [ ] Re-run `python validation/validate.py` with current code, network, and GitHub auth before promoting any new results artifact
-- [ ] Reconcile README's historical 100% exact claim if a fresh live run no longer reproduces it
+- [x] Reconcile README's historical 100% exact claim — now framed as March 2026 calibration evidence, not a permanent current benchmark
+- [ ] Continue
+
+**Public-readiness review** (IN PROGRESS — Codex 2026-07-03)
+- [x] Confirm repo substance: CLI, GitHub Action, PyPI/GitHub clients, analyzers, dependency resolver, validation harness, and 115 tests
+- [x] Repair GitHub Actions install command
+- [x] Add MIT LICENSE file so GitHub detects the license README already claimed
+- [x] Add README package metadata
+- [x] Keep pre-existing generated `validation/results.json` diff uncommitted until a deliberate fresh validation run is reviewed
+- [ ] Commit/push public-readiness repair and confirm GitHub Actions
 - [ ] Continue
 
 **Phase 3: Intelligence**
@@ -258,6 +267,12 @@
 
 - **Worked on:** Tracker adoption, version metadata drift, and validation artifact triage.
 - **Completed:** Added `.graft`, updated Craft.md with reconstructed Session 4 and current validation-artifact warning, synced `vigil.__version__` to pyproject `0.2.3`, and added a package-version regression test.
+
+### 2026-07-03 — Session 6: Public-readiness review
+
+- **Worked on:** Keep `vigil` public-worthy after repo review.
+- **Completed:** Fixed GitHub Actions install command, added MIT LICENSE, added package README metadata, and softened the README validation claim so it no longer presents a March 2026 live-data calibration run as a permanent benchmark.
+- **State:** 115 tests passing locally. `validation/results.json` had a pre-existing generated diff before this session and remains intentionally uncommitted pending a deliberate fresh validation run.
 - **Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 115 tests; `python3 -m compileall src tests validation` passed; `git diff --check` passed.
 - **Held back:** `validation/results.json` remains dirty and uncommitted because it is a stale generated artifact whose colorama expectation contradicts current `validation/validate.py`.
 - **Next:** Run a fresh authenticated validation pass before deciding whether to update `validation/results.json` or public validation claims, then Continue.
