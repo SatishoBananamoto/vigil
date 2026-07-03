@@ -74,13 +74,13 @@
 - [x] Reconcile README's historical 100% exact claim — now framed as March 2026 calibration evidence, not a permanent current benchmark
 - [ ] Continue
 
-**Public-readiness review** (IN PROGRESS — Codex 2026-07-03)
+**Public-readiness review** (COMPLETE — Codex 2026-07-03)
 - [x] Confirm repo substance: CLI, GitHub Action, PyPI/GitHub clients, analyzers, dependency resolver, validation harness, and 115 tests
 - [x] Repair GitHub Actions install command
 - [x] Add MIT LICENSE file so GitHub detects the license README already claimed
 - [x] Add README package metadata
 - [x] Keep pre-existing generated `validation/results.json` diff uncommitted until a deliberate fresh validation run is reviewed
-- [ ] Commit/push public-readiness repair and confirm GitHub Actions
+- [x] Commit/push public-readiness repair and confirm GitHub Actions
 - [ ] Continue
 
 **Phase 3: Intelligence**
@@ -272,7 +272,7 @@
 
 - **Worked on:** Keep `vigil` public-worthy after repo review.
 - **Completed:** Fixed GitHub Actions install command, added MIT LICENSE, added package README metadata, and softened the README validation claim so it no longer presents a March 2026 live-data calibration run as a permanent benchmark.
-- **State:** 115 tests passing locally. `validation/results.json` had a pre-existing generated diff before this session and remains intentionally uncommitted pending a deliberate fresh validation run.
-- **Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 115 tests; `python3 -m compileall src tests validation` passed; `git diff --check` passed.
+- **State:** Public head pushed to `origin/main`; GitHub Actions green on Python 3.11 and 3.12. `validation/results.json` had a pre-existing generated diff before this session and remains intentionally uncommitted pending a deliberate fresh validation run.
+- **Verification:** `python3 -B -m pytest -q -p no:cacheprovider` passed with 115 tests; `python3 -B -m compileall -q src tests validation` passed; `git diff --check` passed; editable install and installed `vigil --help` succeeded in a throwaway venv; GitHub detects MIT license.
 - **Held back:** `validation/results.json` remains dirty and uncommitted because it is a stale generated artifact whose colorama expectation contradicts current `validation/validate.py`.
 - **Next:** Run a fresh authenticated validation pass before deciding whether to update `validation/results.json` or public validation claims, then Continue.
